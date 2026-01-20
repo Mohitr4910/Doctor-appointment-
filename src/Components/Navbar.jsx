@@ -9,24 +9,39 @@ import './Navbar.css'
 let Navbar = () => {
   return (
     <>
-      <header>
-        <nav className='flex justify-between h-14 items-center bg-amber-950  text-white  ' >
-          <img src="" alt="LOGO" />
-          <ul className='flex gap-3.5'>
-            <li><Link to="/home" >Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/booking">Booking</Link></li>
-          </ul>
+      {/* Top Info Bar */}
+      <div className="top-bar">
+        <div className="top-left">
+          <span>📞 +91 9302770758</span>
+          <span>✉ mohitrahangdale67890@gmail.com</span>
+        </div>
 
-          <div className="flex gap-4 p-3.5">
-            <Link to="/myaccount">My Account</Link>
+        <div className="top-right">
+          <Link to="/appointment" className="appointment-btn">
+            BOOK APPOINTMENT
+          </Link>
+        </div>
+      </div>
 
-            <Link to="/login">Login</Link>
-            <Link to="/Signup">SignUp</Link>
+      {/* Main Navbar */}
+      <nav className="navbar">
+        <div className="logo">
+          <span className="logo-icon">✚</span>
+          <span className="logo-text">Medical</span>
+        </div>
 
-          </div>
-        </nav>
-      </header>
+        <ul className="nav-links">
+          <li><Link to="/">HOME</Link></li>
+          <li><Link to="/about">ABOUT</Link></li>
+          <li><Link to="/features">FEATURES</Link></li>
+          <li><Link to="/doctors">DOCTORS</Link></li>
+          <li><Link to="/departments">DEPARTMENTS</Link></li>
+          <li><Link to="/blog">BLOG</Link></li>
+          <li><Link to="/contact">CONTACT</Link></li>
+          <li className="auth"><Link to="/signup">SIGNUP</Link></li>
+          <li className="auth"><Link to="/login">LOGIN</Link></li>
+        </ul>
+      </nav>
 
 
     </>

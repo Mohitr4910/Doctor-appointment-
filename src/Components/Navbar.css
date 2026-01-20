@@ -1,1 +1,91 @@
-@import "tailwindcss";
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------- Top Bar ---------- */
+.top-bar{
+  height:40px;
+  background:rgba(0,0,0,0.6);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 60px;
+  color:#fff;
+  font-size:13px;
+}
+
+.top-left{
+  display:flex;
+  gap:20px;
+}
+
+.top-right .appointment-btn{
+  background:#7ed321;
+  padding:10px 25px;
+  color:#fff;
+  font-weight:600;
+  text-decoration:none;
+  font-size:13px;
+}
+
+/* ---------- Main Navbar ---------- */
+.navbar{
+  height:80px;
+  background:rgba(0,0,0,0.35);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 60px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+/* Logo */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#fff;
+  font-size:22px;
+  font-weight:600;
+}
+
+.logo-icon{
+  color:#7ed321;
+  font-size:26px;
+}
+
+/* Nav Links */
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#fff;
+  font-size:13px;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#7ed321;
+}
+
+/* Signup / Login highlight */
+.auth a{
+  color:black;
+  font-weight:600;
+  font-size: 16px;
+}
+
+
+
+
+
