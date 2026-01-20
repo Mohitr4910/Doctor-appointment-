@@ -4,6 +4,9 @@ import { use, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import v2 from '../assets/57691-486767244.mp4'
+import v3 from '../assets/40781-426939561.mp4'
+import v4 from '../assets/217018_medium.mp4'
+import v5 from '../assets/112256-693798366.mp4'
 
 import { motion } from "framer-motion";
 
@@ -45,7 +48,7 @@ let Login = () => {
 
       e.preventDefault()
       valid = false
-       seterror('Email required')
+      seterror('Email required')
 
     }
     else if (!(email.includes("@") && email.includes(".com"))) {
@@ -108,8 +111,8 @@ let Login = () => {
 
 
 
-        <video 
-           autoPlay loop muted playsInline className="absolute items-center w-full h-full object-cover" > <source src={v2} type="video/mp4" />
+        <video
+          autoPlay loop muted playsInline className="absolute items-center w-full h-full object-cover" > <source src={v5} type="video/mp4" />
         </video>
 
 
@@ -126,67 +129,128 @@ let Login = () => {
           transition={{ duration: 0.7 }}
           className="bg-black/30 p-6 rounded-xl w-[400px] rounded-xl"
         >
-
           <form
             onSubmit={Submit}
-            className="relative flex flex-col gap-[30px] w-[420px] h-[500px] backdrop-blur-lg bg-black/ border border-black rounded-xl shadow-2xs space-y-4 text-white"
+            className="relative overflow-hidden flex flex-col gap-[30px] w-[700px] h-[500px] backdrop-blur-lg border border-black rounded-xl shadow-2xl text-white"
           >
-            <h1 className="text-2xl  font-semibold text-center relative top-[30px]">
-              <motion.h1 initial={{ y: -30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3, duration: 0.5 }} className="text-2xl text-white text-center mb-4">
 
-                Create Your Account
-              </motion.h1>
-            </h1>
+            {/* FORM BACKGROUND VIDEO */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute top-0 left-0 w-full h-full object-cover z-0"
+            >
+              <source src={v2} type="video/mp4" />
+            </video>
 
 
+            {/* DARK OVERLAY */}
+            <div className="absolute inset-0 bg-black/60 z-10"></div>
 
-            <div className='relative  top-8 left-[15px]' >
-              <p className="text-red-950 text-sm">{erremail}</p>
-              <motion.h1 initial={{ y: -30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5, duration: 0.5 }}>
-                <label className="block font-thin text-[20px] text-black-200 mb-1">Email</label>
-                <input
-                  type="text"
-                  name="email"
-                  value={form.email}
-                  onChange={manageform}
-                  placeholder="Email Address"
-                  className="w-[90%] h-[40px] bg-white/10 rounded-md px-4 py-2 outline-none placeholder:text-white"
-                />
-              </motion.h1>
-            </div>
 
-            <div className='relative  top-8 left-[15px]' >
-              <p className="text-red-950 text-sm">{errpass}</p>
-              <motion.h1 initial={{ y: -30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.7, duration: 0.5 }}>
+            <div className='w-[50%] relative top-[80px]'>
+              {/* FORM CONTENT */}
+              <div className="relative z-20 flex flex-col gap-[30px]">
 
-                <label className="block font-thin text-[20px] text-black-200 mb-1">Password</label>
-                <input type="password" name="pass" value={form.pass} onChange={manageform} placeholder="Password"
-                  className="w-[90%] h-[40px] bg-white/10 rounded-md px-4 py-2 outline-none placeholder:text-white" />
-
-              </motion.h1>
-            </div>
-
-            <div className=" flex  flex-col justify-center items-center gap-[30px] pt-2 relative top-[40px]">
-             <motion.h1 initial={{ y: -30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.9, duration: 0.5 }} className='w-[60%] text-center'>
-           
-              <button type="submit" className="w-[50%] h-[40px]  bg-neutral-950 hover:bg-transparent hover:border-2 transition py-2 rounded-lg font-semibold">
-                Sign Up
-              </button>
-               </motion.h1>
-             <motion.h1 initial={{ y: -30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 1, duration: 0.5 }} >
-              <p className="text-[18px] font-bold text-black">
-                Don't have an account?
-                <Link
-                  to="/signup"
-                  className="  text-blue-900 text-[16px] ml-1 hover:underline"
+                <motion.h1
+                  initial={{ y: -30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.7, duration: 0.5 }}
+                  className="text-2xl font-semibold text-center mt-6"
                 >
-                  SignUp
-                </Link>
-              </p>
-               </motion.h1>
+                  Create Your Account
+                </motion.h1>
 
+                <div className="relative left-[15px]  group ">
+                  <p className="text-red-400 text-sm">{erremail}</p>
+
+                  <motion.div
+                    initial={{ y: -30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.9, duration: 0.5 }}
+                  >
+                    <label className="absolute left-1 top-2 text-gray-300 text-[18px] transition-all 
+                             group-focus-within:-top-4 
+                             group-focus-within:text-[14px] 
+                             group-focus-within:text-cyan-400"
+                    >Email</label>
+
+                    <input
+                      type="text"
+                      name="email"
+                      value={form.email}
+                      onChange={manageform}
+                      className="w-[90%] h-[40px] bg-transparent border-b-2 border-white/50 px-1 focus:border-cyan-400  outline-none placeholder:text-white"
+                    />
+                  </motion.div>
+                </div>
+
+                <div className="relative left-[15px] group">
+                  <p className="text-red-400 text-sm">{errpass}</p>
+
+                  <motion.div
+                    initial={{ y: -30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 1.2, duration: 0.5 }}
+                  >
+                    <label className="absolute left-1 top-2 text-gray-300 text-[18px] transition-all 
+                             group-focus-within:-top-4 
+                             group-focus-within:text-[14px] 
+                             group-focus-within:text-cyan-400">Password</label>
+
+                    <input
+                      type="password"
+                      name="pass"
+                      value={form.pass}
+                      onChange={manageform}
+                      className="w-[90%] h-[40px] bg-transparent border-b-2 border-white/50 px-1 focus:border-cyan-400  outline-none placeholder:text-white"
+
+                    />
+                  </motion.div>
+                </div>
+
+                <div className="flex flex-col items-center gap-6 mt-4">
+
+                  <motion.div
+                    initial={{ y: -30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 1.6, duration: 0.5 }}
+                  >
+                    <button
+                      type="submit"
+                      className="w-[160px] h-[40px] bg-neutral-950 hover:bg-transparent hover:border transition rounded-lg font-semibold"
+                    >
+                      Sign Up
+                    </button>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ y: -30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 1.9, duration: 0.5 }}
+                  >
+                    <p className="text-[16px] font-semibold">
+                      Already have account?
+                      <Link
+                        to="/signup"
+                        className="text-blue-400 ml-1 hover:underline"
+                      >
+                        Login
+                      </Link>
+                    </p>
+                  </motion.div>
+
+                </div>
+
+              </div>
             </div>
+
+            {/* -------------------------- */}
+
           </form>
+
 
 
         </motion.div>

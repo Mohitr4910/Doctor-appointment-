@@ -12,18 +12,7 @@ let Home = () => {
   return (
     <>
 
-      <div className="hero">
-        {/* Background Slider */}
-        <div className="hero-bg">
-          <img src={Img} />
-          <img src={Img1} />
-          <img src={Img2} />
-          <img src={Img1} />
-
-
-        </div>  
-      </div>
-
+     
 
     </>
   )

@@ -5,7 +5,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* ---------- Top Bar ---------- */
 .top-bar{
   height:40px;
   background:rgba(0,0,0,0.6);
@@ -31,10 +30,9 @@
   font-size:13px;
 }
 
-/* ---------- Main Navbar ---------- */
 .navbar{
   height:80px;
-  background:rgba(0,0,0,0.35);
+   background:rgba(0, 0, 0, 0.126);
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -44,7 +42,6 @@
   z-index:1000;
 }
 
-/* Logo */
 .logo{
   display:flex;
   align-items:center;
@@ -59,31 +56,52 @@
   font-size:26px;
 }
 
-/* Nav Links */
 .nav-links{
   list-style:none;
   display:flex;
-  gap:25px;
-}
+  gap:35px;
+  transition: 0.3s ease;
 
-.nav-links a{
-  text-decoration:none;
-  color:#fff;
-  font-size:13px;
-  font-weight:500;
-  transition:0.3s;
 }
 
 .nav-links a:hover{
-  color:#7ed321;
+  font-weight: 600;
+  transform: scale(1.1);
 }
 
-/* Signup / Login highlight */
-.auth a{
+.signup a{
   color:black;
   font-weight:600;
   font-size: 16px;
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+
 }
+.signup a:hover{
+  border: none;
+  background: rgba(0, 128, 0, 0.484);
+}
+
+.login a{
+  color:black;
+  font-weight:600;
+  font-size: 16px;
+  border-radius: 25px;
+  padding: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+    background: rgba(0, 128, 0, 0.484);
+}
+.login a:hover{
+  border: none;
+  border: 1px solid black;
+  background: transparent;
+}
+
+
 
 
 

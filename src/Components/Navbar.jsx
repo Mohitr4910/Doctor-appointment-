@@ -38,8 +38,11 @@ let Navbar = () => {
           <li><Link to="/departments">DEPARTMENTS</Link></li>
           <li><Link to="/blog">BLOG</Link></li>
           <li><Link to="/contact">CONTACT</Link></li>
-          <li className="auth"><Link to="/signup">SIGNUP</Link></li>
-          <li className="auth"><Link to="/login">LOGIN</Link></li>
+        </ul>
+
+        <ul className='nav-links'>
+          <li className="signup"><Link to="/signup">SIGNUP</Link></li>
+          <li className="login"><Link to="/login">LOGIN</Link></li>
         </ul>
       </nav>
 
