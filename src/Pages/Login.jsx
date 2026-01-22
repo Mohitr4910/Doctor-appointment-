@@ -108,17 +108,10 @@ let Login = () => {
     <>
 
       <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden font-serif">
-
-
-
+        
         <video
           autoPlay loop muted playsInline className="absolute items-center w-full h-full object-cover" > <source src={v5} type="video/mp4" />
         </video>
-
-
-
-
-
 
         {/* Overlay (optional dark layer) */}
         <div className="absolute flex justify-center items-center w-full h-full bg-black/40"></div>
@@ -163,7 +156,7 @@ let Login = () => {
                   Create Your Account
                 </motion.h1>
 
-                <div className="relative left-[15px]  group ">
+                <div className="relative left-[15px] group">
                   <p className="text-red-400 text-sm">{erremail}</p>
 
                   <motion.div
@@ -171,10 +164,12 @@ let Login = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.9, duration: 0.5 }}
                   >
-                    <label className="absolute left-1 top-2 text-gray-300 text-[18px] transition-all 
-                             group-focus-within:-top-4 
-                             group-focus-within:text-[14px] 
-                             group-focus-within:text-cyan-400"
+                    <label className="absolute left-1 top-2 text-gray-300 text-[18px] transition-all duration-300 
+
+                             peer-focus:-top-4 peer-focus:text-xs peer-focus:text-cyan-400
+                             peer-not-placeholder-shown:-top-4 
+                             peer-not-placeholder-shown:text-xs
+                           peer-not-placeholder-shown:text-cyan-400"
                     >Email</label>
 
                     <input
@@ -182,7 +177,8 @@ let Login = () => {
                       name="email"
                       value={form.email}
                       onChange={manageform}
-                      className="w-[90%] h-[40px] bg-transparent border-b-2 border-white/50 px-1 focus:border-cyan-400  outline-none placeholder:text-white"
+                      placeholder=''
+                      className="w-[90%] h-[40px] bg-transparent border-b-2 border-white/50 px-1 focus:border-cyan-400  outline-none"
                     />
                   </motion.div>
                 </div>
@@ -211,7 +207,7 @@ let Login = () => {
                   </motion.div>
                 </div>
 
-                <div className="flex flex-col items-center gap-6 mt-4">
+                <div className="flex flex-col relative top-[40px] items-center gap-6 mt-4">
 
                   <motion.div
                     initial={{ y: -30, opacity: 0 }}

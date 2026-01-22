@@ -27,7 +27,7 @@ let Navbar = () => {
       <nav className="navbar">
         <div className="logo">
           <span className="logo-icon">✚</span>
-          <span className="logo-text">Medical</span>
+          <span className="logo-text">ClinicHub</span>
         </div>
 
         <ul className="nav-links">
