@@ -3,10 +3,8 @@ import '../App.css'
 import { use, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-import v2 from '../assets/57691-486767244.mp4'
-import v3 from '../assets/40781-426939561.mp4'
-import v4 from '../assets/217018_medium.mp4'
-import v5 from '../assets/112256-693798366.mp4'
+import v2 from '../assets/119967-719443875_medium.mp4'
+import v5 from '../assets/mixkit-doctor-looks-at-screen-showing-dna-and-brain-models-5491-hd-ready.mp4'
 
 import { motion } from "framer-motion";
 
@@ -113,8 +111,7 @@ let Login = () => {
           autoPlay loop muted playsInline className="absolute items-center w-full h-full object-cover" > <source src={v5} type="video/mp4" />
         </video>
 
-        {/* Overlay (optional dark layer) */}
-        <div className="absolute flex justify-center items-center w-full h-full bg-black/40"></div>
+        <div className="absolute flex justify-center items-center w-full h-full bg-black/20"></div>
 
         <motion.div
           initial={{ y: -100 }}
@@ -127,24 +124,21 @@ let Login = () => {
             className="relative overflow-hidden flex flex-col gap-[30px] w-[700px] h-[500px] backdrop-blur-lg border border-black rounded-xl shadow-2xl text-white"
           >
 
-            {/* FORM BACKGROUND VIDEO */}
             <video
               autoPlay
               loop
               muted
               playsInline
-              className="absolute top-0 left-0 w-full h-full object-cover z-0"
+              className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-[0.6]"
             >
               <source src={v2} type="video/mp4" />
             </video>
 
 
-            {/* DARK OVERLAY */}
             <div className="absolute inset-0 bg-black/60 z-10"></div>
 
 
             <div className='w-[50%] relative top-[80px]'>
-              {/* FORM CONTENT */}
               <div className="relative z-20 flex flex-col gap-[30px]">
 
                 <motion.h1
@@ -216,7 +210,7 @@ let Login = () => {
                   >
                     <button
                       type="submit"
-                      className="w-[160px] h-[40px] bg-neutral-950 hover:bg-transparent hover:border transition rounded-lg font-semibold"
+                      className="w-[160px] h-[40px] bg-green-400 hover:bg-transparent hover:border border-white hover:text-white transition rounded-lg font-semibold text-black"
                     >
                       Sign Up
                     </button>

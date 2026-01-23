@@ -1,13 +1,19 @@
 import React from 'react'
 import './Home.css'
 
-import crcl  from '../assets/banner_img_bg.png'
+import crcl from '../assets/banner_img_bg.png'
 import doctor from '../assets/hero-image.png'
-import aboutimg1 from '../assets/pexels-zeynep-ozata-2153642453-32828971.jpg'
+import aboutimg1 from '../assets/about-img1.jpg'
 import aboutimg2 from '../assets/pexels-shvetsa-4167541 (1).jpg'
+
+import doctor1 from "../assets/pexels-cristian-rojas-8460157.jpg"
+import doctor2 from "../assets/pexels-pavel-danilyuk-5998474.jpg"
+import doctor3 from "../assets/pexels-kooldark-14628069.jpg"
+import doctor4 from "../assets/pexels-kooldark-27666710.jpg"
+import plus from "../assets/Plus-h.png"
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
-import {useRef } from "react";
+import { useRef } from "react";
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from 'react'
@@ -16,37 +22,37 @@ import { useEffect } from 'react'
 
 
 let Home = () => {
-  useGSAP(()=>{
-       gsap.to(".hero-big-circel",{
-      scale:1,
-      duration:1,
-      opacity:1,
-      
+  useGSAP(() => {
+    gsap.to(".hero-big-circel", {
+      scale: 1,
+      duration: 1,
+      opacity: 1,
+
     })
-       gsap.to(".hero-img",{
-     
-      scale:1,
-      duration:1.2,
-      opacity:1,
-      delay:0.3
+    gsap.to(".hero-img", {
+
+      scale: 1,
+      duration: 1.2,
+      opacity: 1,
+      delay: 0.3
     })
-       gsap.to(".hero-circle",{
-        rotate: 360,
-         duration: 15,
-         repeat: -1,
-         ease: "linear",
-         opacity:1,
+    gsap.to(".hero-circle", {
+      rotate: 360,
+      duration: 15,
+      repeat: -1,
+      ease: "linear",
+      opacity: 1,
     })
-     
+
   })
-   useEffect(() => {
+  useEffect(() => {
 
     gsap.from(".hero-left> *", {
-      y: -60,          // upar se drop
+      y: -60,         
       opacity: 0,
       duration: 0.8,
-      stagger: 0.2,    // ek ek karke
-      ease: "bounce.out" // drop feel
+      stagger: 0.2,   
+      ease: "bounce.out" 
     })
 
   }, []);
@@ -54,120 +60,234 @@ let Home = () => {
   return (
     <>
 
-    <section className="hero-section">
+      <section className="hero-section">
 
-      <div className="hero-container">
+        <div className="hero-container">
 
-        {/* LEFT CONTENT */}
-        <div className="hero-left">
+          <div className="hero-left">
 
-          <span className="hero-tag">
-            Welcome To ClinicHub
-          </span>
+            <span className="hero-tag">
+              Welcome To ClinicHub
+            </span>
 
-          <h1>
-            We Are Committed <br />
-            To Your Health
-          </h1>
+            <h1>
+              We Are Committed <br />
+              To Your Health
+            </h1>
 
-          <p>
-            It is a established fact that a reader will be distracted by the
-            readable content of a page when looking at this layout.
-          </p>
+            <p>
+              It is a established fact that a reader will be distracted by the
+              readable content of a page when looking at this layout.
+            </p>
 
-          <Link to="/doctor" className="hero-btn">
-            Meet A Doctor
+            <Link to="/doctor" className="hero-btn">
+              Meet A Doctor
+            </Link>
+
+            <div className="hero-stats">
+
+              <div className="stat-box">
+                <h2>355k+</h2>
+                <span>Recovered Patients</span>
+              </div>
+
+              <div className="stat-box">
+                <h2>98%</h2>
+                <span>Good Reviews</span>
+              </div>
+
+              <div className="stat-box">
+                <h2>120+</h2>
+                <span>Doctors</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div className="hero-right">
+
+            <div className="hero-big-circel">
+
+              <div className="hero-circle"><img src={crcl} alt="" /></div>
+
+              <img src={doctor} alt="doctor" className="hero-img" />
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section className="about-section">
+
+        <div className="about-wrapper">
+
+          <div className="about-images">
+
+            <div className="img-large">
+              <img src={aboutimg1} alt="medical" />
+            </div>
+
+            <div className="img-small">
+              <img src={aboutimg2} alt="doctor" />
+
+            </div>
+
+          </div>
+
+          <div className="about-content">
+            <span className="about-tag">About Us</span>
+
+            <h2>
+              The Great Place Of Medical Hospital Center.
+            </h2>
+
+            <p>
+              We provide complete healthcare solutions with modern technology
+              and experienced professionals. Our goal is to deliver safe,
+              reliable and affordable treatment with world class facilities.
+            </p>
+
+            <div className="about-features">
+
+              <ul>
+                <li>Ambulance Services</li>
+                <li>Pharmacy On Clinic</li>
+                <li>24/7 Medical Emergency</li>
+              </ul>
+
+              <ul>
+                <li>Oxygen On Wheel</li>
+                <li>On Duty Doctors</li>
+              </ul>
+
+            </div>
+
+            <Link to="/about" className="discover-btn">
+              Discover More  ➜
+            </Link>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section className="doctor-section">
+        <div className="doctor-header">
+          <span>Our Team</span>
+          <h2>Meet Our Expert Doctor</h2>
+        </div>
+
+        <div className="doctor-cards">
+
+          <Link  to="/about" >
+            <div className="doctor-card">
+              <img src={doctor1} alt="" />
+              <div className="card-info">
+                <h3>Dr.Shreya</h3>
+                <p>Neurology</p>
+                <small>MBBS, FCPS, FRCS</small>
+                <button>+</button>
+              </div>
+
+            </div>
           </Link>
 
-          <div className="hero-stats">
-
-            <div className="stat-box">
-              <h2>355k+</h2>
-              <span>Recovered Patients</span>
+          <Link  to="/about">
+            <div className="doctor-card">
+              <img src={doctor2} alt="" />
+              <div className="card-info">
+                <h3>Dr. Khushi</h3>
+                <p>Cardiology</p>
+                <small>MBBS, FCPS, FRCS</small>
+                <button>+</button>
+              </div>
             </div>
 
-            <div className="stat-box">
-              <h2>98%</h2>
-              <span>Good Reviews</span>
-            </div>
-
-            <div className="stat-box">
-              <h2>120+</h2>
-              <span>Doctors</span>
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* RIGHT SIDE */}
-        <div className="hero-right">
-
-          <div className="hero-big-circel">
-
-          <div className="hero-circle"><img src={crcl} alt="" /></div>
-
-          <img  src={doctor} alt="doctor"  className="hero-img"/>
-         
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-     <section className="about">
-
-      <div className='bg-layar'></div>
-      <div className="about-container">
-        {/* LEFT IMAGES */}
-        <div className="about-left-img">
-
-          <div className="first-img">
-            <img src={aboutimg1} alt="Doctor" />
-          </div>
-
-          <div className="second-img">
-            <img src={aboutimg2} alt="Hospital" />
-          </div>
-
-        </div>
-
-        {/* RIGHT CONTENT */}
-        <div className="about-right-content">
-
-          <h4>About </h4>
-                
-             <span>Our Healthcare Center</span>
-
-          <h2>
-            Trusted Medical Care <br /> For You And Your Family
-          </h2>
-
-          <p>
-            We provide world-class healthcare services with advanced technology
-            and experienced doctors. Our mission is to make quality healthcare
-            accessible, affordable, and reliable for everyone.
-          </p>
-           
-
-          <Link to="/about" className="about-btn">
-            Discover More
           </Link>
-         
 
+          <Link>
+            <div className="doctor-card">
+              <img src={doctor3} alt="" />
+              <div className="card-info">
+                <h3>Dr. Rohan</h3>
+                <p>Ophthalmology</p>
+                <small>MBBS, FCPS, FRCS</small>
+                <button>+</button>
+              </div>
+            </div>
+
+          </Link>
+          <Link>
+            <div className="doctor-card">
+              <img src={doctor4} alt="" />
+              <div className="card-info">
+                <h3>Dr. Neeraj</h3>
+                <p>Pediatric</p>
+                <small>MBBS, FCPS, FRCS</small>
+                <button>+</button>
+              </div>
+            </div>
+
+          </Link>
         </div>
 
-      </div>
-
-    </section>
-   
+        <button className="view-btn">View More</button>
+      </section>
 
 
-    
+
+      <section class="process-section">
+        <div class="process-container">
+
+          <span class="process-tag">How We Work</span>
+          <h2>Our Working Process</h2>
+
+          <div class="process-steps">
+
+            <div class="step">
+              <div class="step-circle green">01</div>
+              <h3>Fill The Form</h3>
+              <p>Lorem ipsum dolor sit amet consectetur ipsam adipisicing elit.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-circle blue">02</div>
+              <h3>Book An Appointment</h3>
+              <p>Lorem ipsum dolor sit amet consectetur ipsam adipisicing elit.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-circle pink">03</div>
+              <h3>Check-Ups</h3>
+              <p>Lorem ipsum dolor sit amet consectetur ipsam adipisicing elit.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-circle yellow">04</div>
+              <h3>Get Reports</h3>
+              <p>Lorem ipsum dolor sit amet consectetur ipsam adipisicing elit.</p>
+            </div>
+
+            <svg class="wave-line" viewBox="0 0 1200 200">
+              <path d="M0,100 C150,0 300,200 450,100 600,0 750,200 900,100 1050,0 1200,100"
+                fill="none"
+                stroke="#9fd7ff"
+                stroke-width="2"
+                stroke-dasharray="6 6" />
+            </svg>
+
+          </div>
+        </div>
+      </section>
+
+
 
 
 

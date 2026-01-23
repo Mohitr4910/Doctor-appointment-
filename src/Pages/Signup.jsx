@@ -1,5 +1,4 @@
 import React from 'react'
-import Img2 from '../assets/pexels-1422870-32486496 copy.jpg'
 import './Signup.css'
 import { use, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -7,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
-import v2 from '../assets/217018_medium.mp4'
+import v2 from '../assets/217018_medium copy.mp4'
 
 
 
@@ -36,8 +35,10 @@ let Signup = () => {
     let [errpass, seterrpass] = useState('')
     let [errcpass, seterrcpass] = useState('')
 
+
     let Submit = (e) => {
-        console.log(form)
+      
+
 
         e.preventDefault()
 
@@ -141,11 +142,8 @@ let Signup = () => {
     return (
 
         <>
-
-
-
-
- <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+    
+            <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
 
  
 
@@ -179,13 +177,9 @@ let Signup = () => {
                     glareMaxOpacity={0.3}
                     scale={1.02}
                 >
-
-
-
-
                     <form
                         onSubmit={Submit}
-                        className="relative flex flex-col gap-[30px] w-[420px] h-[650px] backdrop-blur-lg bg-black/0 border border-black rounded-xl shadow-2xs space-y-4 text-black"
+                        className="relative flex flex-col gap-[30px] w-[700px] h-[650px] backdrop-blur-lg bg-white/5 border border-black rounded-xl shadow-2xs space-y-4 text-black "
                     >
                         <h1 className="text-2xl  font-semibold text-center relative top-[30px]">
                             Create Your Account
