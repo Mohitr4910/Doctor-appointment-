@@ -195,7 +195,7 @@ let Login = () => {
                       name="pass"
                       value={form.pass}
                       onChange={manageform}
-                      className="w-[90%] h-[40px] bg-transparent border-b-2 border-white/50 px-1 focus:border-cyan-400  outline-none placeholder:text-white"
+                      className="w-[90%] h-[40px] bg-transparent border-b-2 border-white/50 px-1 focus:border-b-2 focus:border-white/50 focus:outline-none focus:ring-0 placeholder:text-white"
 
                     />
                   </motion.div>
@@ -227,7 +227,7 @@ let Login = () => {
                         to="/signup"
                         className="text-blue-400 ml-1 hover:underline"
                       >
-                        Login
+                        SignUp
                       </Link>
                     </p>
                   </motion.div>

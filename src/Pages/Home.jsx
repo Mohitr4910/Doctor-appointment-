@@ -5,18 +5,19 @@ import crcl from '../assets/banner_img_bg.png'
 import doctor from '../assets/hero-image.png'
 import aboutimg1 from '../assets/about-img1.jpg'
 import aboutimg2 from '../assets/pexels-shvetsa-4167541 (1).jpg'
+import bgvideo from '../assets/Health-and-Medicine.mp4'
 
 import doctor1 from "../assets/pexels-cristian-rojas-8460157.jpg"
 import doctor2 from "../assets/pexels-pavel-danilyuk-5998474.jpg"
 import doctor3 from "../assets/pexels-kooldark-14628069.jpg"
 import doctor4 from "../assets/pexels-kooldark-27666710.jpg"
-import plus from "../assets/Plus-h.png"
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import { useRef } from "react";
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from 'react'
+import AnimatedContent from '../Components/animatedcontant'
 
 
 
@@ -48,17 +49,21 @@ let Home = () => {
   useEffect(() => {
 
     gsap.from(".hero-left> *", {
-      y: -60,         
+      y: -60,
       opacity: 0,
       duration: 0.8,
-      stagger: 0.2,   
-      ease: "bounce.out" 
+      stagger: 0.2,
+      ease: "bounce.out"
     })
 
   }, []);
 
   return (
     <>
+
+
+
+
 
       <section className="hero-section">
 
@@ -70,6 +75,8 @@ let Home = () => {
               Welcome To ClinicHub
             </span>
 
+            <AnimatedContent >
+            </AnimatedContent>
             <h1>
               We Are Committed <br />
               To Your Health
@@ -124,58 +131,90 @@ let Home = () => {
 
       <section className="about-section">
 
+        <div className="about-video-bg">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          >
+            <source src={bgvideo} type="video/mp4" />
+          </video>
+        </div>
         <div className="about-wrapper">
 
           <div className="about-images">
 
-            <div className="img-large">
-              <img src={aboutimg1} alt="medical" />
-            </div>
+            <AnimatedContent direction="horizontal" reverse distance={400}
+              duration={2}
+              ease="power4.out">
+              <div className="img-large">
+                <img src={aboutimg1} alt="medical" />
+              </div>
 
-            <div className="img-small">
-              <img src={aboutimg2} alt="doctor" />
+              <div className="img-small">
+                <img src={aboutimg2} alt="doctor" />
 
-            </div>
+              </div>
+            </AnimatedContent>
 
           </div>
 
           <div className="about-content">
-            <span className="about-tag">About Us</span>
 
-            <h2>
-              The Great Place Of Medical Hospital Center.
-            </h2>
+            <AnimatedContent distance={-400}
+              duration={2}
+              ease="power4.out">
 
-            <p>
-              We provide complete healthcare solutions with modern technology
-              and experienced professionals. Our goal is to deliver safe,
-              reliable and affordable treatment with world class facilities.
-            </p>
+              <h1 className="about-tag">About Us</h1>
+            </AnimatedContent>
 
-            <div className="about-features">
+            <AnimatedContent direction="horizontal" distance={400}
+              duration={2}
+              ease="power4.out">
+              <h2>
+                The Great Place Of Medical Hospital Center.
+              </h2>
 
-              <ul>
-                <li>Ambulance Services</li>
-                <li>Pharmacy On Clinic</li>
-                <li>24/7 Medical Emergency</li>
-              </ul>
+              <p>
+                We provide complete healthcare solutions with modern technology
+                and experienced professionals. Our goal is to deliver safe,
+                reliable and affordable treatment with world class facilities.
+              </p>
 
-              <ul>
-                <li>Oxygen On Wheel</li>
-                <li>On Duty Doctors</li>
-              </ul>
 
-            </div>
 
-            <Link to="/about" className="discover-btn">
-              Discover More  ➜
-            </Link>
+
+              <div className="about-features">
+
+                <ul>
+                  <li>Ambulance Services</li>
+                  <li>Pharmacy On Clinic</li>
+                  <li>24/7 Medical Emergency</li>
+                </ul>
+                <ul>
+                  <li>Oxygen On Wheel</li>
+                  <li>On Duty Doctors</li>
+                </ul>
+
+              </div>
+
+
+              <Link to="/about" className="discover-btn">
+                Discover More  ➜
+              </Link>
+
+            </AnimatedContent>
 
           </div>
 
         </div>
 
       </section>
+
+
+
 
 
       <section className="doctor-section">
@@ -186,7 +225,7 @@ let Home = () => {
 
         <div className="doctor-cards">
 
-          <Link  to="/about" >
+          <Link to="/about" >
             <div className="doctor-card">
               <img src={doctor1} alt="" />
               <div className="card-info">
@@ -199,7 +238,7 @@ let Home = () => {
             </div>
           </Link>
 
-          <Link  to="/about">
+          <Link to="/about">
             <div className="doctor-card">
               <img src={doctor2} alt="" />
               <div className="card-info">

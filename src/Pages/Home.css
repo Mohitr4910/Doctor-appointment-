@@ -204,7 +204,7 @@ background: radial-gradient(circle at left,
 
 .about-section {
   width: 100%;
-  height: 800px;
+  height:auto;
   padding: 100px 0;
   background: #fff;
   position: relative;
@@ -226,11 +226,34 @@ background: radial-gradient(circle at left,
   z-index: 1;
 }
 
+.about-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.about-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-video-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.303),
+    rgba(255, 255, 255, 0.389)
+  );
+}
+
 /* WRAPPER */
 
 .about-wrapper {
   max-width: 1200px;
   margin: auto;
+
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -245,6 +268,10 @@ background: radial-gradient(circle at left,
   width: 100%;
   position: relative;
   right: 70px;
+  /* min-height: '200vh'; padding-top: '150px'; */
+
+ will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 .img-large img {
@@ -264,17 +291,18 @@ background: radial-gradient(circle at left,
 .img-small img {
   width: 100%;
 }
-
-
-
-
 .about-content {
+
   width: 100%;
 }
 
 .about-tag {
-  color: #305682;
+  color:white;
   font-size: 26px;
+  padding: 10px;
+  background-color:  #6697ad;
+  width: 218px;
+  height: 89px;
   font-weight: 600;
 
 }
@@ -365,7 +393,6 @@ background: radial-gradient(circle at left,
 /* ----------------------------------------------  */
 
 .doctor-section {
-  margin-top: 90px;
   padding: 80px 60px;
   background: url("../assets/service_bg.jpg") center/cover no-repeat;
 }
