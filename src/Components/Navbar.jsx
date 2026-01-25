@@ -18,7 +18,7 @@ let Navbar = () => {
         </div>
 
         <div className="top-right">
-          <Link to="/appointment" className="appointment-btn">
+          <Link to="/booking" className="appointment-btn">
             BOOK APPOINTMENT
           </Link>
         </div>

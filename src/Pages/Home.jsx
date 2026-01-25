@@ -5,7 +5,8 @@ import crcl from '../assets/banner_img_bg.png'
 import doctor from '../assets/hero-image.png'
 import aboutimg1 from '../assets/about-img1.jpg'
 import aboutimg2 from '../assets/pexels-shvetsa-4167541 (1).jpg'
-import bgvideo from '../assets/Health-and-Medicine.mp4'
+import bgvideo from '../assets/mixkit-doctor-shows-patient-brain-scan-on-large-screen-5642-hd-ready.mp4'
+// import bgvideo2 from '../assets/Untitled design (6).mp4'
 
 import doctor1 from "../assets/pexels-cristian-rojas-8460157.jpg"
 import doctor2 from "../assets/pexels-pavel-danilyuk-5998474.jpg"
@@ -66,7 +67,7 @@ let Home = () => {
 
 
       <section className="hero-section">
-
+    
         <div className="hero-container">
 
           <div className="hero-left">
@@ -111,12 +112,11 @@ let Home = () => {
             </div>
 
           </div>
-
           <div className="hero-right">
 
             <div className="hero-big-circel">
-
-              <div className="hero-circle"><img src={crcl} alt="" /></div>
+              <div className="hero-circle"><img src={crcl} alt="" />
+              </div>
 
               <img src={doctor} alt="doctor" className="hero-img" />
 
@@ -163,8 +163,8 @@ let Home = () => {
 
           <div className="about-content">
 
-            <AnimatedContent distance={-400}
-              duration={2}
+            <AnimatedContent distance={-200}
+              duration={4}
               ease="power4.out">
 
               <h1 className="about-tag">About Us</h1>
@@ -225,6 +225,10 @@ let Home = () => {
 
         <div className="doctor-cards">
 
+    <AnimatedContent direction="horizontal" reverse distance={300}
+                        duration={2}
+                        ease="power4.out">
+
           <Link to="/about" >
             <div className="doctor-card">
               <img src={doctor1} alt="" />
@@ -237,6 +241,12 @@ let Home = () => {
 
             </div>
           </Link>
+    </AnimatedContent>
+
+      <AnimatedContent direction="horizontal" reverse distance={100}
+                        duration={2}
+                        ease="power4.out">
+
 
           <Link to="/about">
             <div className="doctor-card">
@@ -250,6 +260,12 @@ let Home = () => {
             </div>
 
           </Link>
+        </AnimatedContent>
+
+
+  <AnimatedContent direction="horizontal"  distance={100}
+                        duration={2}
+                        ease="power4.out">
 
           <Link>
             <div className="doctor-card">
@@ -263,6 +279,12 @@ let Home = () => {
             </div>
 
           </Link>
+       </AnimatedContent>
+
+         <AnimatedContent direction="horizontal" distance={300}
+                        duration={2}
+                        ease="power4.out">
+
           <Link>
             <div className="doctor-card">
               <img src={doctor4} alt="" />
@@ -275,6 +297,7 @@ let Home = () => {
             </div>
 
           </Link>
+           </AnimatedContent>
         </div>
 
         <button className="view-btn">View More</button>

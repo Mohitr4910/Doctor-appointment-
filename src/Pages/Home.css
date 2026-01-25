@@ -8,12 +8,13 @@ html {
 }
 
 
+
 .hero-section {
   min-height: 100vh;
 background: radial-gradient(circle at left,
     #67d3ca 10%,
-    #d2f2f9 40%,
-    #e9fde7 70%);
+    #b2aeff 40%,
+    #b1c8af 70%);
   display: flex;
   align-items: center;
   position: relative;
@@ -148,6 +149,7 @@ background: radial-gradient(circle at left,
   will-change: transform, opacity;
 }
 
+
 .hero-img {
   width: 650px;
   position: relative;
@@ -243,8 +245,8 @@ background: radial-gradient(circle at left,
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    rgba(255, 255, 255, 0.303),
-    rgba(255, 255, 255, 0.389)
+    rgba(0, 0, 0, 0.548),
+    rgba(0, 0, 0, 0.662)
   );
 }
 
@@ -299,23 +301,26 @@ background: radial-gradient(circle at left,
 .about-tag {
   color:white;
   font-size: 26px;
-  padding: 10px;
-  background-color:  #6697ad;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana;
   width: 218px;
-  height: 89px;
+  height: 60px;
+  padding: 10px;
+  background-color: #009dff;
   font-weight: 600;
 
 }
 
 .about-content h2 {
   font-size: 38px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana;
 
+color:lightgreen;
   font-weight: 800;
   margin: 70px 0;
 }
 
 .about-content p {
-  color: #555;
+ color: white;
   font-size: 17px;
   line-height: 1.7;
 }
@@ -325,7 +330,7 @@ background: radial-gradient(circle at left,
 .about-features {
   display: flex;
   gap: 40px;
-  color:rgb(114, 10, 152);
+ color:rgb(114, 199, 225);
   margin: 60px 0;
 }
 
@@ -345,7 +350,7 @@ background: radial-gradient(circle at left,
   content: "✔";
   position: absolute;
   left: 0;
-  color: #0bacc5;
+  color: #09ff00;
 }
 
 /* BUTTON */
@@ -353,7 +358,7 @@ background: radial-gradient(circle at left,
 .discover-btn {
   display: inline-block;
   padding: 12px 28px;
-  background: #103b6b;
+  background:green;
   color: #fff;
   border-radius: 30px;
   text-decoration: none;
@@ -363,8 +368,7 @@ background: radial-gradient(circle at left,
 
 .discover-btn:hover {
   background: transparent;
-  color: #000;
-  border: 1px solid #000;
+  border: 1px solid white;
 }
 
 /* RESPONSIVE */
@@ -400,6 +404,7 @@ background: radial-gradient(circle at left,
 .doctor-header {
   text-align: center;
   margin-bottom: 50px;
+  font-size: 22px;
 }
 
 .doctor-header span {
@@ -442,7 +447,7 @@ background: radial-gradient(circle at left,
 }
 
 .card-info {
-  background: #009dff;
+  background:rgb(0, 85, 0);
   color: white;
   padding: 18px;
   position: relative;
@@ -482,7 +487,7 @@ background: radial-gradient(circle at left,
   padding: 12px 35px;
   border: none;
   border-radius: 25px;
-  background: #009dff;
+  background:rgb(186, 87, 87);
   color: white;
   font-size: 16px;
   cursor: pointer;
