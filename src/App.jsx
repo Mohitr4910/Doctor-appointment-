@@ -8,6 +8,8 @@ import About from './Pages/About'
 import Booking from './Pages/Booking'
 import Login from './Pages/Login'
 import Signup from './Pages/Signup'
+import Doctors from './Pages/Doctors'
+import Departments from './Pages/Departments'
 
 
   let App=()=> {
@@ -20,6 +22,8 @@ import Signup from './Pages/Signup'
       <Route path="home" element={<Home/>}/>
       <Route path="about" element={<About/>}/>
       <Route path="booking" element={<Booking/>}/>
+      <Route path="doctors" element={<Doctors/>}/>
+      <Route path="departments" element={<Departments/>}/>
       </Route>
 
       <Route path="login" element={<Login/>}/>

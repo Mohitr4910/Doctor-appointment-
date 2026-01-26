@@ -127,7 +127,7 @@ let Signup = () => {
             })
 
             if (existuser) {
-                alert("Alradyn registered")
+                alert("already registered")
                 return
             }
             users.push(form)

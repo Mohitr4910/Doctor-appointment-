@@ -91,6 +91,8 @@ let Login = () => {
     }
 
     alert("Login successful")
+      localStorage.setItem("email", form.email)
+      localStorage.setItem("password",form.pass)
     navigate("/home")
   }
 

@@ -5,6 +5,7 @@ import crcl from '../assets/banner_img_bg.png'
 import doctor from '../assets/hero-image.png'
 import aboutimg1 from '../assets/about-img1.jpg'
 import aboutimg2 from '../assets/pexels-shvetsa-4167541 (1).jpg'
+import bookingimg from '../assets/doctors-8881540_1920.jpg'
 import bgvideo from '../assets/mixkit-doctor-shows-patient-brain-scan-on-large-screen-5642-hd-ready.mp4'
 // import bgvideo2 from '../assets/Untitled design (6).mp4'
 
@@ -47,6 +48,8 @@ let Home = () => {
     })
 
   })
+
+
   useEffect(() => {
 
     gsap.from(".hero-left> *", {
@@ -59,12 +62,9 @@ let Home = () => {
 
   }, []);
 
+
   return (
     <>
-
-
-
-
 
       <section className="hero-section">
     
@@ -142,6 +142,7 @@ let Home = () => {
             <source src={bgvideo} type="video/mp4" />
           </video>
         </div>
+        
         <div className="about-wrapper">
 
           <div className="about-images">
@@ -348,6 +349,22 @@ let Home = () => {
           </div>
         </div>
       </section>
+
+
+
+      <div className='book-doctor'>
+        <div className='booking-content'>
+
+        <span>Get in Touch</span>
+        <h1>Best Medical & Health Care Near Your City</h1>
+        <p>We believe everyone deserves access to quality healthcare. Our dedicated medical team is committed to providing safe, reliable, and affordable treatment for patients of all ages in your city.</p>
+
+        <Link to="/booking">Get Appointment</Link>
+        </div>
+        <div className='booking-img'>
+          <img src={bookingimg} alt="" />
+        </div>
+      </div>
 
 
 

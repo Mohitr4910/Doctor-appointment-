@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
+import { useEffect, useState } from "react";
 
 import logo from "../assets/apothecary-159037_1920.png"
 
@@ -8,6 +9,32 @@ import logo from "../assets/apothecary-159037_1920.png"
 
 
 let Navbar = () => {
+
+
+
+  const [Login, setLogin] = useState(false);
+
+  useEffect(() => {
+    const user = localStorage.getItem("email");
+           console.log(user);
+           
+  
+    if (user) {
+      setLogin(true);
+    } else {
+      setLogin(false);
+    }
+
+  }, []);
+
+  let logout = () => {
+    confirm("Are you sure")
+    localStorage.removeItem("email");
+    localStorage.removeItem("password");
+    setLogin(false);
+  };
+
+
   return (
     <>
       {/* Top Info Bar */}
@@ -36,13 +63,22 @@ let Navbar = () => {
           <li><Link to="/about">ABOUT</Link></li>
           <li><Link to="/doctors">DOCTORS</Link></li>
           <li><Link to="/departments">DEPARTMENTS</Link></li>
-          <li><Link to="/contact">CONTACT</Link></li>
         </ul>
 
+         
         <ul className='nav-links'>
-          <li className="signup"><Link to="/signup">SIGNUP</Link></li>
-          <li className="login"><Link to="/login">LOGIN</Link></li>
+          
+          {Login ? (<div>
+          {/* <img src="" alt="" /> */}
+          <li className='profile'>Profile</li>
+          </div>):("")}
+          <li className="signup"><Link to="/signup">SignUP</Link></li>
+
+          <div className='left-button'>
+          { Login ?(<li className="logout"><button onClick={logout}>LogOut</button> </li>):(<li className="login"><Link to="/login">LogIn</Link></li>)}
+          </div>
         </ul>
+
       </nav>
 
 

@@ -57,12 +57,18 @@
   font-size:26px;
 }
 
-.nav-links{
+.nav-links{ 
   list-style:none;
   display:flex;
   gap:35px;
   transition: 0.3s ease;
 
+}
+.nav-links a{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 20px;
+   color: green;
+   font-weight: 600;
 }
 
 .nav-links a:hover{
@@ -84,7 +90,7 @@
 .signup a:hover{
   border: none;
   color: white;
-  background:rgb(0, 85, 0);
+  background:green;
 }
 
 .login a{
@@ -95,7 +101,7 @@
   padding: 12px;
   padding-left: 20px;
   padding-right: 20px;
-    background:rgb(0, 85, 0);
+    background:green;
 }
 .login a:hover{
   border: none;
@@ -104,8 +110,38 @@
   background: transparent;
 }
 
+.logout button{
+   color:white;
+   cursor: pointer;
+  font-weight:600;
+  font-size: 16px;
+  border-radius: 25px;
+  padding: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+    background:green;
+}
+
+.logout button:hover{
+  border: none;
+  color: black;
+  border: 1px solid black;
+  background: transparent;
+}
 
 
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile{
+  font-size: 22px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
 
 
 
