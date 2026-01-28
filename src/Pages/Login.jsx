@@ -37,10 +37,11 @@ let Login = () => {
 
   let Submit = (e) => {
 
+    e.preventDefault()
+    
     let email = form.email.trim()
     let pass = form.pass.trim()
 
-    e.preventDefault()
     console.log(form)
     let valid = true
 
@@ -102,7 +103,7 @@ let Login = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowForm(true);
-    }, 2500); // 8 seconds
+    }, 2500); 
 
     return () => clearTimeout(timer);
   }, []);
@@ -122,7 +123,7 @@ let Login = () => {
 
         {showForm && (
           <AnimatedContent direction="horizontal" distance={-100}
-            duration={3}
+            duration={2}
             // delay={8}
             ease="power4.out">
             <form

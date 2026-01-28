@@ -57,7 +57,8 @@ let Home = () => {
       opacity: 0,
       duration: 0.8,
       stagger: 0.2,
-      ease: "bounce.out"
+      ease: "bounce.out",
+       clearProps: "all"
     })
 
   }, []);
@@ -75,9 +76,6 @@ let Home = () => {
             <span className="hero-tag">
               Welcome To ClinicHub
             </span>
-
-            <AnimatedContent >
-            </AnimatedContent>
             <h1>
               We Are Committed <br />
               To Your Health
@@ -88,7 +86,8 @@ let Home = () => {
               readable content of a page when looking at this layout.
             </p>
 
-            <Link to="/doctor" className="hero-btn">
+
+            <Link to="/doctors" className="hero-btn">
               Meet A Doctor
             </Link>
 
@@ -147,9 +146,8 @@ let Home = () => {
 
           <div className="about-images">
 
-            <AnimatedContent direction="horizontal" reverse distance={400}
-              duration={2}
-              ease="power4.out">
+            <AnimatedContent direction="horizontal" reverse distance={400} duration={2} ease="power4.out">
+              
               <div className="img-large">
                 <img src={aboutimg1} alt="medical" />
               </div>

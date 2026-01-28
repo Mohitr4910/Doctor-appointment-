@@ -24,6 +24,9 @@ let Signup = () => {
         cpass: '',
     })
 
+    console.log(form.name);
+    
+
 
 
     let manageform = (e) => {

@@ -28,10 +28,16 @@ let Navbar = () => {
   }, []);
 
   let logout = () => {
-    confirm("Are you sure")
-    localStorage.removeItem("email");
-    localStorage.removeItem("password");
-    setLogin(false);
+    const Confirm =window.confirm("Are you sure you want to logout?")
+    if(Confirm){
+
+      localStorage.removeItem("email");
+      localStorage.removeItem("password");
+      setLogin(false);
+    }
+    else{
+      return
+    }
   };
 
 

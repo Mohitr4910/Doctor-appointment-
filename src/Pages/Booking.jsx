@@ -1,90 +1,198 @@
 import React from 'react'
+import { useState } from 'react'
 import "./Booking.css"
-import video1 from "../assets/Health-and-Medicine.mp4"
+import formimg from "../assets/appoinment_page_img.png"
+
+function Booking() {
+  let [form, setform] = useState({
+
+    name: '',
+    num: '',
+    email: '',
+    gender: '',
+    age: '',
+    speciality: '',
+    date: '',
+    time: '',
+    symptoms: ''
+
+  })
 
 
-   let Booking=()=> {
+console.log(form);
+
+
+  let manageform = (e) => {
+
+    setform({ ...form, [e.target.name]: e.target.value })
+
+  }
+
+
+  let Submit = (e) => {
+
+    e.preventDefault()
+
+
+    if (form.name.trim() == "") {
+      e.preventDefault()
+      alert("name reqired")
+      
+    }
+    else if(form.num.trim().length !=10){
+      e.preventDefault()
+      alert("enter valid number")
+
+    }
+    else if(isNaN(form.num)){
+      e.preventDefault()
+      alert("Enter avalid number")
+
+    }
+    else if(form.email.trim()==""){
+      e.preventDefault()
+      alert("Email reqired")
+
+    }
+    else if(!(form.email.includes("@") && form.email.includes(".com"))){
+      e.preventDefault()
+      alert("Enter valid email")
+
+    }
+      else if(form.gender.trim()==""){
+      e.preventDefault()
+      alert("Gender reqired")
+
+    }
+      else if(form.age.trim()==""){
+      e.preventDefault()
+      alert("age reqired")
+
+    }
+      else if(isNaN(form.age)){
+      e.preventDefault()
+      alert("enter valid age")
+
+    }
+     else if(form.speciality.trim()==""){
+      e.preventDefault()
+      alert("speciality reqired")
+
+    }
+     else if(form.date.trim()==""){
+      e.preventDefault()
+      alert("date reqired")
+
+    }
+     else if(form.time.trim()==""){
+      e.preventDefault()
+      alert("time reqired")
+
+    }
+     else if(form.symptoms.trim()==""){
+      e.preventDefault()
+      alert("symptoms reqired")
+
+    }
+    
+  }
+
   return (
+
+
     <>
+      <div className='main'>
 
-   
-
-
-    <section class="appointment-section">
-  <div class="appointment-wrapper">
-
-    <div class="form-area">
-      <h2>Book Doctor Appointment</h2>
-
-      <form>
-        <div class="input-group">
-          <input type="text" placeholder="Full Name" required/>
-        </div>
-
-        <div class="input-group">
-          <input type="tel" placeholder="Mobile Number" required/>
-        </div>
-
-        <div class="input-group">
-          <input type="email" placeholder="Email Address"/>
-        </div>
-
-        <div class="input-group">
-          <select required>
-            <option value="">Select Gender</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <div class="input-group">
-          <input type="number" placeholder="Age" required/>
-        </div>
-
-        <div class="input-group">
-          <select required>
-            <option value="">Select Specialty</option>
-            <option>Cardiology</option>
-            <option>Orthopedic</option>
-            <option>Dental</option>
-            <option>General Physician</option>
-          </select>
-        </div>
-
-        <div class="row">
-          <div class="input-group">
-            <input type="date" required/>
+        <div className='content'>
+                 
+          <div className='form-img'>
+            <img src={formimg} alt="" />
           </div>
 
-          <div class="input-group">
-            <input type="time" required/>
+
+          <form className='book-form' onSubmit={Submit}>
+           <h1>Book Appointment</h1>
+             
+            <div className="input-group">
+              <label>Name</label>
+              <input type="text" name='name' value={form.name} onChange={manageform} placeholder="Full Name" />
+            </div>
+
+            <div className="input-group">
+              <label>Number</label>
+              <input type="text" name='num' value={form.num} onChange={manageform} placeholder="Mobile Number" />
+            </div>
+
+            <div className="input-group">
+              <label>Email</label>
+              <input type="text" name='email' value={form.email} onChange={manageform} placeholder="Email Address" />
+            </div>
+
+            <div className="input-group">
+              <label>Gender</label>
+              <select name='gender' value={form.gender} onChange={manageform} >
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+
+            </div>
+
+            <div className="input-group">
+              <label>Age</label>
+              <input type="number" name='age' value={form.age} onChange={manageform} placeholder="Age" />
+            </div>
+
+        
+          <div className="input-group">
+            <label>Specialty</label>
+            <select name='speciality' value={form.specialty} onChange={manageform} >
+              <option>Select Specialty</option>
+              <option>Cardiology</option>
+              <option>Orthopedic</option>
+              <option>Dental</option>
+              <option>General Physician</option>
+            </select>
           </div>
+
+            <div className="row">
+              <div className="input-group">
+                <label>Date</label>
+                <input type="date" name='date' value={form.date} onChange={manageform} />
+              </div>
+
+              <div className="input-group">
+                <label>Time</label>
+
+                <select name='time' value={form.time} onChange={manageform} >
+                  <option value="">Time</option>
+                  <option>10:00AM-11:00AM</option>
+                  <option>11:30AM-12:30PM</option>
+                  <option>01:00PM-02:00PM</option>
+                  <option>03:00PM-04:00PM</option>
+                  <option>04:00PM-05:00PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="input-group">
+              <label>Symptoms</label>
+              <textarea rows="4" name='symptoms' value={form.symptoms} onChange={manageform} placeholder="Symptoms / Problem Information"></textarea>
+            </div>
+
+            <button type="submit">Book Appointment</button>
+          </form>
+
         </div>
 
-        <div class="input-group">
-          <textarea rows="4" placeholder="Symptoms / Problem Information"></textarea>
-        </div>
-
-        <button type="submit">Book Appointment</button>
-      </form>
-    </div>
-
-    {/* <div class="wave-divider"></div> */}
-
-    <div class="video-area">
-      <video autoPlay muted loop  playsinline>
-        <source src={video1} type="video/mp4"/>
-      </video>
-    </div>
-
-  </div>
-</section>
 
 
+      </div>
 
 
     </>
+
   )
 }
 
