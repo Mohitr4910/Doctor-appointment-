@@ -162,7 +162,7 @@ let Login = () => {
                         value={form.email}
                         onChange={manageform}
                         placeholder='Enter Email'
-                        className="w-[90%] h-[40px] text-[17px] bg-transparent border-b-4 border-black/50 px-1 focus:border-b-2 focus:border-white/50 focus:outline-none focus:ring-0 placeholder:text-blue-900"
+                        className="w-[90%] h-[40px] text-[20px] text-black bg-transparent border-b-4 border-black/50 px-1 focus:border-b-2 focus:border-white/50 focus:outline-none focus:ring-0 placeholder:text-blue-900"
                       />
                     </div>
                   </AnimatedContent>
@@ -179,12 +179,12 @@ let Login = () => {
                       <label className="block font-thin text-[24px] text-black mb-1">Password</label>
 
                       <input
-                        type="password"
+                        type="Password"
                         name="pass"
                         value={form.pass}
                         onChange={manageform}
                         placeholder='Enter Password'
-                        className="w-[90%] h-[40px] text-[17px] bg-transparent border-b-4 border-black/50 px-1 focus:border-b-2 focus:border-white/50 focus:outline-none focus:ring-0 placeholder:text-blue-900"
+                        className="w-[90%] h-[40px] text-[20px] text-black bg-transparent border-b-4 border-black/50 px-1 focus:border-b-2 focus:border-white/50 focus:outline-none focus:ring-0 placeholder:text-blue-900"
 
                       />
                     </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import "./Booking.css"
 import formimg from "../assets/appoinment_page_img.png"
+import axios from 'axios'
 
 function Booking() {
   let [form, setform] = useState({
@@ -19,7 +20,6 @@ function Booking() {
   })
 
 
-console.log(form);
 
 
   let manageform = (e) => {
@@ -33,66 +33,103 @@ console.log(form);
 
     e.preventDefault()
 
-
+     let valid=true
     if (form.name.trim() == "") {
       e.preventDefault()
+      valid=false
       alert("name reqired")
       
     }
     else if(form.num.trim().length !=10){
       e.preventDefault()
+      valid=false
+
       alert("enter valid number")
 
     }
     else if(isNaN(form.num)){
       e.preventDefault()
+      valid=false
+
       alert("Enter avalid number")
 
     }
     else if(form.email.trim()==""){
       e.preventDefault()
+      valid=false
+
       alert("Email reqired")
 
     }
     else if(!(form.email.includes("@") && form.email.includes(".com"))){
       e.preventDefault()
+      valid=false
+
       alert("Enter valid email")
 
     }
       else if(form.gender.trim()==""){
       e.preventDefault()
+      valid=false
+
       alert("Gender reqired")
 
     }
       else if(form.age.trim()==""){
       e.preventDefault()
+      valid=false
+
       alert("age reqired")
 
     }
       else if(isNaN(form.age)){
       e.preventDefault()
+      valid=false
+
       alert("enter valid age")
 
     }
      else if(form.speciality.trim()==""){
       e.preventDefault()
+      valid=false
+
       alert("speciality reqired")
 
     }
      else if(form.date.trim()==""){
       e.preventDefault()
+      valid=false
+
       alert("date reqired")
 
     }
      else if(form.time.trim()==""){
       e.preventDefault()
+      valid=false
+
       alert("time reqired")
 
     }
      else if(form.symptoms.trim()==""){
       e.preventDefault()
+      valid=false
+
       alert("symptoms reqired")
 
+    }
+
+    if(valid){
+      let api="http://localhost:3000/doctor"
+
+      let loggedemail=localStorage.getItem("email")
+
+      axios.post(api,{...form,loggedemail:localStorage.getItem("email")}).then(
+   ()=>{
+     alert("Booking confirm")
+
+   }
+      )
+  
     }
     
   }
@@ -147,7 +184,7 @@ console.log(form);
         
           <div className="input-group">
             <label>Specialty</label>
-            <select name='speciality' value={form.specialty} onChange={manageform} >
+            <select name='speciality' value={form.speciality} onChange={manageform} >
               <option>Select Specialty</option>
               <option>Cardiology</option>
               <option>Orthopedic</option>

@@ -10,6 +10,7 @@ import Login from './Pages/Login'
 import Signup from './Pages/Signup'
 import Doctors from './Pages/Doctors'
 import Departments from './Pages/Departments'
+import MyBooking from './Pages/MyBooking'
 
 
   let App=()=> {
@@ -24,6 +25,7 @@ import Departments from './Pages/Departments'
       <Route path="booking" element={<Booking/>}/>
       <Route path="doctors" element={<Doctors/>}/>
       <Route path="departments" element={<Departments/>}/>
+      <Route path="mybooking" element={<MyBooking/>}/>
       </Route>
 
       <Route path="login" element={<Login/>}/>
