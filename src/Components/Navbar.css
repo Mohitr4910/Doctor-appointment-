@@ -24,6 +24,7 @@
 
 .top-right .appointment-btn{
   background:#7ed321;
+  cursor: pointer;
   padding:18px 30px;
   color:#fff;
   font-weight:600;

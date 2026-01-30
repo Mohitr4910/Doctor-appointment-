@@ -15,6 +15,7 @@ import MyBooking from './Pages/MyBooking'
 
   let App=()=> {
 
+
   return (
     <>
     <Routes>
@@ -26,6 +27,7 @@ import MyBooking from './Pages/MyBooking'
       <Route path="doctors" element={<Doctors/>}/>
       <Route path="departments" element={<Departments/>}/>
       <Route path="mybooking" element={<MyBooking/>}/>
+       <Route path="/booking/login" element={<Login />} />
       </Route>
 
       <Route path="login" element={<Login/>}/>

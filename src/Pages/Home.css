@@ -655,7 +655,7 @@ color:lightgreen;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.book-doctor a{
+.book-doctor button{
   font-size: 22px;
   background:rgba(0, 128, 0, 0.585);
   text-align: center;

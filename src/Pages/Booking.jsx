@@ -3,8 +3,17 @@ import { useState } from 'react'
 import "./Booking.css"
 import formimg from "../assets/appoinment_page_img.png"
 import axios from 'axios'
+import { Navigate } from 'react-router-dom'
+import AnimatedContent from '../Components/animatedcontant'
+import bgvideo from '../assets/267871.mp4'
+import { useNavigate } from 'react-router-dom'
+
+
 
 function Booking() {
+  let navigate=useNavigate()
+
+
   let [form, setform] = useState({
 
     name: '',
@@ -33,123 +42,155 @@ function Booking() {
 
     e.preventDefault()
 
-     let valid=true
+    let valid = true
     if (form.name.trim() == "") {
       e.preventDefault()
-      valid=false
+      valid = false
       alert("name reqired")
-      
+
     }
-    else if(form.num.trim().length !=10){
+    else if (form.num.trim().length != 10) {
       e.preventDefault()
-      valid=false
+      valid = false
 
       alert("enter valid number")
 
     }
-    else if(isNaN(form.num)){
+    else if (isNaN(form.num)) {
       e.preventDefault()
-      valid=false
+      valid = false
 
       alert("Enter avalid number")
 
     }
-    else if(form.email.trim()==""){
+    else if (form.email.trim() == "") {
       e.preventDefault()
-      valid=false
+      valid = false
 
       alert("Email reqired")
 
     }
-    else if(!(form.email.includes("@") && form.email.includes(".com"))){
+    else if (!(form.email.includes("@") && form.email.includes(".com"))) {
       e.preventDefault()
-      valid=false
+      valid = false
 
       alert("Enter valid email")
 
     }
-      else if(form.gender.trim()==""){
+    else if (form.gender.trim() == "") {
       e.preventDefault()
-      valid=false
+      valid = false
 
       alert("Gender reqired")
 
     }
-      else if(form.age.trim()==""){
+    else if (form.age.trim() == "") {
       e.preventDefault()
-      valid=false
+      valid = false
 
       alert("age reqired")
 
     }
-      else if(isNaN(form.age)){
+    else if (isNaN(form.age)) {
       e.preventDefault()
-      valid=false
+      valid = false
 
       alert("enter valid age")
 
     }
-     else if(form.speciality.trim()==""){
+    else if (form.speciality.trim() == "") {
       e.preventDefault()
-      valid=false
+      valid = false
 
       alert("speciality reqired")
 
     }
-     else if(form.date.trim()==""){
+    else if (form.date.trim() == "") {
       e.preventDefault()
-      valid=false
+      valid = false
 
       alert("date reqired")
 
     }
-     else if(form.time.trim()==""){
+    else if (form.time.trim() == "") {
       e.preventDefault()
-      valid=false
+      valid = false
 
       alert("time reqired")
 
     }
-     else if(form.symptoms.trim()==""){
+    else if (form.symptoms.trim() == "") {
       e.preventDefault()
-      valid=false
+      valid = false
 
       alert("symptoms reqired")
 
     }
 
-    if(valid){
-      let api="http://localhost:3000/doctor"
+    if (valid) {
 
-      let loggedemail=localStorage.getItem("email")
+      let login=localStorage.getItem("email")
 
-      axios.post(api,{...form,loggedemail:localStorage.getItem("email")}).then(
-   ()=>{
-     alert("Booking confirm")
+      if(login){
+      let api = "http://localhost:3000/doctor"
 
-   }
-      )
-  
-    }
+      let loggedemail = localStorage.getItem("email")
     
+      axios.post(api, { ...form, loggedemail: localStorage.getItem("email") }).then(
+        () => {
+          alert("Booking confirm")
+
+        }
+      
+    
+      )
+    }
+    else{
+         alert("Please Login First")
+        navigate("login")
+    }
+
+    }
+
   }
+
+    //   let login=()=>{
+    //    let login=localStorage.getItem("email")
+  
+    //   if(!login){
+    //     alert("Please Login First")
+    //     navigate("login")
+         
+    //   }
+    //   else{
+    //       navigate("booking")
+    //   }
+    // }
 
   return (
 
 
     <>
       <div className='main'>
+          <video autoPlay muted loop playsinline class="bg-video">
+               <source src={bgvideo} type="video/mp4" />
+          </video>
 
         <div className='content'>
-                 
+       
+
           <div className='form-img'>
+          <AnimatedContent distance={400} duration={2} ease="power4.out">
             <img src={formimg} alt="" />
+          </AnimatedContent>
           </div>
+
+          <AnimatedContent direction="horizontal" distance={400} duration={2} ease="power4.out">
 
 
           <form className='book-form' onSubmit={Submit}>
-           <h1>Book Appointment</h1>
-             
+            <h1>Book Appointment</h1>
+
             <div className="input-group">
               <label>Name</label>
               <input type="text" name='name' value={form.name} onChange={manageform} placeholder="Full Name" />
@@ -181,17 +222,17 @@ function Booking() {
               <input type="number" name='age' value={form.age} onChange={manageform} placeholder="Age" />
             </div>
 
-        
-          <div className="input-group">
-            <label>Specialty</label>
-            <select name='speciality' value={form.speciality} onChange={manageform} >
-              <option>Select Specialty</option>
-              <option>Cardiology</option>
-              <option>Orthopedic</option>
-              <option>Dental</option>
-              <option>General Physician</option>
-            </select>
-          </div>
+
+            <div className="input-group">
+              <label>Specialty</label>
+              <select name='speciality' value={form.speciality} onChange={manageform} >
+                <option>Select Specialty</option>
+                <option>Cardiology</option>
+                <option>Orthopedic</option>
+                <option>Dental</option>
+                <option>General Physician</option>
+              </select>
+            </div>
 
             <div className="row">
               <div className="input-group">
@@ -220,6 +261,7 @@ function Booking() {
 
             <button type="submit">Book Appointment</button>
           </form>
+          </AnimatedContent>
 
         </div>
 

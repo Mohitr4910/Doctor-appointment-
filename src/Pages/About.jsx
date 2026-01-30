@@ -14,7 +14,6 @@ import gallery6 from '../assets/hospital-1802679.jpg'
 import gallery7 from '../assets/doctor-79603.jpg'
 import gallery8 from '../assets/pngtree-professional-doctor-analyzing-medical-data-on-computer-screen-picture-image_16352846.jpg'
 import gallery9 from '../assets/hospital-4904920.jpg'
-import gallery10 from '../assets/disabled-72211_1920.jpg'
 
 
 

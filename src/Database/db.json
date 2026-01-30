@@ -1,54 +1,43 @@
 {
   "doctor": [
     {
-      "name": "Mohit",
-      "number": 123456789,
-      "email": "mohit@gmail.com",
-      "gender": "Male",
-      "age": 21,
-      "speciality": "cardialogy",
-      "date": "1/02/2026",
-      "time": "10:00AM-11:00AM",
-      "symptomes": "hjgbsjgfyufvbfbsjghfsbf sbvkuyygsfbwnfnmn  jfguywfbwgfyugf",
-      "id": "6c00"
-    },
-    {
-      "name": "Neha",
-      "number": 122023789,
-      "email": "neha@gmail.com",
-      "gender": "Female",
-      "age": 22,
-      "speciality": "cardialogy",
-      "date": "3/02/2026",
-      "time": "11:30AM-12:30PM",
-      "symptomes": "hjgbsjgfyufvbfbsjghfsbf sbvkuyygsfbwnfnmn  jfguywfbwgfyugf",
-      "id": "1dcd"
-    },
-    {
-      "id": "a712",
-      "name": "Mohit",
-      "num": "9302770526",
+      "id": "8d08",
+      "name": "Mohit Rahangdale",
+      "num": "9302770759",
       "email": "mohitrahangdale67890@gmail.com",
       "gender": "Male",
-      "age": "20",
+      "age": "21",
       "speciality": "Cardiology",
-      "date": "2026-01-30",
+      "date": "2026-01-31",
       "time": "11:30AM-12:30PM",
-      "symptoms": "nbjkstvujyghfa6u",
+      "symptoms": "mohit mohit mohit",
       "loggedemail": "mohitrahangdale67890@gmail.com"
     },
     {
-      "id": "290f",
-      "name": "Praful",
-      "num": "1201201201",
-      "email": "mohit@gmail.com",
+      "id": "c1af",
+      "name": "Neha",
+      "num": "9131854640",
+      "email": "Neha@gmail.com",
       "gender": "Male",
-      "age": "20",
+      "age": "21",
+      "speciality": "Dental",
+      "date": "2026-01-31",
+      "time": "01:00PM-02:00PM",
+      "symptoms": "neha neha",
+      "loggedemail": "mohitrahangdale67890@gmail.com"
+    },
+    {
+      "id": "9918",
+      "name": "ppppp",
+      "num": "9302770526",
+      "email": "7890@gmail.com",
+      "gender": "Female",
+      "age": "21",
       "speciality": "Cardiology",
-      "date": "2026-01-30",
-      "time": "11:30AM-12:30PM",
-      "symptoms": "hii my name is mohit",
-      "loggedemail": null
+      "date": "2025-12-31",
+      "time": "10:00AM-11:00AM",
+      "symptoms": "rrrr",
+      "loggedemail": "mohitrahangdale67890@gmail.com"
     }
   ]
 }

@@ -17,7 +17,6 @@ import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import { useRef } from "react";
 import gsap from 'gsap'
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from 'react'
 import AnimatedContent from '../Components/animatedcontant'
 
@@ -63,6 +62,19 @@ let Home = () => {
 
   }, []);
 
+
+    let login=()=>{
+       let login=localStorage.getItem("email")
+  
+      if(!login){
+        alert("Please Login First")
+        navigate("login")
+         
+      }
+      else{
+          navigate("booking")
+      }
+    }
 
   return (
     <>
@@ -357,7 +369,7 @@ let Home = () => {
         <h1>Best Medical & Health Care Near Your City</h1>
         <p>We believe everyone deserves access to quality healthcare. Our dedicated medical team is committed to providing safe, reliable, and affordable treatment for patients of all ages in your city.</p>
 
-        <Link to="/booking">Get Appointment</Link>
+        <button onClick={login} >Get Appointment</button>
         </div>
         <div className='booking-img'>
           <img src={bookingimg} alt="" />

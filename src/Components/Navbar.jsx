@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import './Navbar.css'
 import { useEffect, useState } from "react";
 
@@ -9,28 +10,27 @@ import logo from "../assets/apothecary-159037_1920.png"
 
 
 let Navbar = () => {
-
-
-
+  let navigate=useNavigate()
+  
+  
+  
   const [Login, setLogin] = useState(false);
-
+  
   useEffect(() => {
     const user = localStorage.getItem("email");
-          //  console.log(user);
-           
-  
+    //  console.log(user);
     if (user) {
       setLogin(true);
     } else {
       setLogin(false);
     }
-
+    
   }, []);
-
+  
   let logout = () => {
     const Confirm =window.confirm("Are you sure you want to logout?")
     if(Confirm){
-
+      
       localStorage.removeItem("email");
       localStorage.removeItem("password");
       setLogin(false);
@@ -39,6 +39,21 @@ let Navbar = () => {
       return
     }
   };
+  
+  
+  
+    let login=()=>{
+       let login=localStorage.getItem("email")
+  
+      if(!login){
+        alert("Please Login First")
+        navigate("login")
+         
+      }
+      else{
+          navigate("booking")
+      }
+    }
 
 
   return (
@@ -51,9 +66,9 @@ let Navbar = () => {
         </div>
 
         <div className="top-right">
-          <Link to="/booking" className="appointment-btn">
-            BOOK APPOINTMENT
-          </Link>
+        
+          <button onClick={login} className="appointment-btn">BOOK APPOINTMENT</button>
+        
         </div>
       </div>
 
