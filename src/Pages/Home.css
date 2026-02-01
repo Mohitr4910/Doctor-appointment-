@@ -615,7 +615,7 @@ color:lightgreen;
   background: url("../assets/appontment-bg-h3.jpg") center/cover no-repeat ;
 }
 
-.book-doctor::after {
+.book-doctor::before{
   content: "";
   position: absolute;
   inset: 0;
@@ -629,8 +629,7 @@ color:lightgreen;
   z-index: 2;
   width: 50%;
   color: white;
-  margin-top: 80px;
-  margin-left: 80px;
+  margin-top: 70px;
 
 }
 .book-doctor span{
@@ -672,7 +671,7 @@ color:lightgreen;
   width: 600px;
   z-index: 2;
    top: 60px;
-   left: 200px;
+  right: 80px;
    border: none;
    border-radius: 20px;
 }

@@ -1,5 +1,5 @@
 {
-  "doctor": [
+  "users": [
     {
       "id": "8d08",
       "name": "Mohit Rahangdale",
@@ -39,5 +39,42 @@
       "symptoms": "rrrr",
       "loggedemail": "mohitrahangdale67890@gmail.com"
     }
+  ],
+
+  
+    "doctors":[
+      {
+      "name":"Dr.Abhishek",
+      "speciality":"Neurology",
+      "degree":"MBBS, FCPS, FRCS",
+      "image": "doctor1"
+
+    },
+      {
+      "name":"Dr.Khushi",
+      "speciality":"Cardiology",
+      "degree":"MBBS, FCPS, FRCS",
+      "image": "doctor2"
+
+
+    },
+      {
+      "name":"Dr.Rohan",
+      "speciality":"Ophthalmology",
+      "degree":"MBBS, FCPS, FRCS",
+      "image": "doctor3"
+
+
+    },
+      {
+      "name":"Dr.Neeraj",
+      "speciality":"Pediatric",
+      "degree":"MBBS, FCPS, FRCS",
+      "image": "../assets/pexels-kooldark-27666710.jpg"
+
+
+    }
   ]
 }
+
+

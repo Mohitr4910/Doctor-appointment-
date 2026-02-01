@@ -8,12 +8,24 @@ import "./MyBooking.css";
 
 let MyBooking = () => {
 
-  const [open, setOpen] = useState(null);
-
+  let [open, setOpen] = useState(null);
   let [Data, setdata] = useState([])
+  let [form, setform] = useState({
+    
+              name: '',
+              num: '',
+              email: '',
+              gender: '',
+              age: '',
+              speciality: '',
+              date: '',
+              time: '',
+              symptoms: ''
+
+  })
 
   let FatchData = () => {
-    let api = "http://localhost:3000/doctor"
+    let api = "http://localhost:3000/users"
 
     axios.get(api).then((res) => {
       let data = res.data
@@ -41,20 +53,20 @@ let MyBooking = () => {
 
     <>
 
-          <div className="booking-page">
-      {
-        Data.map((e) => (
+      <div className="booking-page">
+        {
+          Data.map((e) => (
             <div className="booking-card">
 
-              <div className="booking-top" onClick={() => setOpen(open===e.id ? null:e.id)}>
+              <div className="booking-top" onClick={() => setOpen(open === e.id ? null : e.id)}>
                 <div className="top-left">
                   <h3>{e.name}</h3>
                 </div>
 
-                <div className={`arrow ${open ===e.id ? "rotate" : ""}`}>⌄</div>
+                <div className={`arrow ${open === e.id ? "rotate" : ""}`}>⌄</div>
               </div>
 
-              {open===e.id && (
+              {open === e.id && (
                 <div className="dropdown-content">
 
                   <div className="booking-grid">
@@ -108,9 +120,12 @@ let MyBooking = () => {
               )}
 
             </div>
-        ))
-      }
-          </div>
+          ))
+        }
+      </div>
+
+
+
     </>
   );
 

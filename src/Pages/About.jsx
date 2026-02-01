@@ -15,9 +15,21 @@ import gallery7 from '../assets/doctor-79603.jpg'
 import gallery8 from '../assets/pngtree-professional-doctor-analyzing-medical-data-on-computer-screen-picture-image_16352846.jpg'
 import gallery9 from '../assets/hospital-4904920.jpg'
 
+import { useEffect } from 'react'
+
+
 
 
 let About = () => {
+ 
+  useEffect(() => {
+    // Check if page has already been refreshed
+    if (!sessionStorage.getItem("refreshed")) {
+      sessionStorage.setItem("refreshed", "true");
+      window.location.reload(); // page reload
+    }
+  }, []);
+ 
   return (
     <>
       <section className='hero'>

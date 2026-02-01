@@ -15,10 +15,10 @@ import doctor3 from "../assets/pexels-kooldark-14628069.jpg"
 import doctor4 from "../assets/pexels-kooldark-27666710.jpg"
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
-import { useRef } from "react";
 import gsap from 'gsap'
 import { useEffect } from 'react'
 import AnimatedContent from '../Components/animatedcontant'
+import Doctors from './Doctors'
 
 
 
@@ -212,7 +212,7 @@ let Home = () => {
               </div>
 
 
-              <Link to="/about" className="discover-btn">
+              <Link to="/about" className="discover-btn" >
                 Discover More  ➜
               </Link>
 
@@ -228,141 +228,18 @@ let Home = () => {
 
 
 
-      <section className="doctor-section">
-        <div className="doctor-header">
-          <span>Our Team</span>
-          <h2>Meet Our Expert Doctor</h2>
-        </div>
+      <section >
+       <Doctors />
 
-        <div className="doctor-cards">
-
-    <AnimatedContent direction="horizontal" reverse distance={300}
-                        duration={2}
-                        ease="power4.out">
-
-          <Link to="/about" >
-            <div className="doctor-card">
-              <img src={doctor1} alt="" />
-              <div className="card-info">
-                <h3>Dr.Shreya</h3>
-                <p>Neurology</p>
-                <small>MBBS, FCPS, FRCS</small>
-                <button>+</button>
-              </div>
-
-            </div>
-          </Link>
-    </AnimatedContent>
-
-      <AnimatedContent direction="horizontal" reverse distance={100}
-                        duration={2}
-                        ease="power4.out">
-
-
-          <Link to="/about">
-            <div className="doctor-card">
-              <img src={doctor2} alt="" />
-              <div className="card-info">
-                <h3>Dr. Khushi</h3>
-                <p>Cardiology</p>
-                <small>MBBS, FCPS, FRCS</small>
-                <button>+</button>
-              </div>
-            </div>
-
-          </Link>
-        </AnimatedContent>
-
-
-  <AnimatedContent direction="horizontal"  distance={100}
-                        duration={2}
-                        ease="power4.out">
-
-          <Link>
-            <div className="doctor-card">
-              <img src={doctor3} alt="" />
-              <div className="card-info">
-                <h3>Dr. Rohan</h3>
-                <p>Ophthalmology</p>
-                <small>MBBS, FCPS, FRCS</small>
-                <button>+</button>
-              </div>
-            </div>
-
-          </Link>
-       </AnimatedContent>
-
-         <AnimatedContent direction="horizontal" distance={300}
-                        duration={2}
-                        ease="power4.out">
-
-          <Link>
-            <div className="doctor-card">
-              <img src={doctor4} alt="" />
-              <div className="card-info">
-                <h3>Dr. Neeraj</h3>
-                <p>Pediatric</p>
-                <small>MBBS, FCPS, FRCS</small>
-                <button>+</button>
-              </div>
-            </div>
-
-          </Link>
-           </AnimatedContent>
-        </div>
-
-        <button className="view-btn">View More</button>
-      </section>
-
-
-
-      <section class="process-section">
-        <div class="process-container">
-
-          <span class="process-tag">How We Work</span>
-          <h2>Our Working Process</h2>
-
-          <div class="process-steps">
-
-            <div class="step">
-              <div class="step-circle green">01</div>
-              <h3>Fill The Form</h3>
-              <p>Lorem ipsum dolor sit amet consectetur ipsam adipisicing elit.</p>
-            </div>
-
-            <div class="step">
-              <div class="step-circle blue">02</div>
-              <h3>Book An Appointment</h3>
-              <p>Lorem ipsum dolor sit amet consectetur ipsam adipisicing elit.</p>
-            </div>
-
-            <div class="step">
-              <div class="step-circle pink">03</div>
-              <h3>Check-Ups</h3>
-              <p>Lorem ipsum dolor sit amet consectetur ipsam adipisicing elit.</p>
-            </div>
-
-            <div class="step">
-              <div class="step-circle yellow">04</div>
-              <h3>Get Reports</h3>
-              <p>Lorem ipsum dolor sit amet consectetur ipsam adipisicing elit.</p>
-            </div>
-
-            <svg class="wave-line" viewBox="0 0 1200 200">
-              <path d="M0,100 C150,0 300,200 450,100 600,0 750,200 900,100 1050,0 1200,100"
-                fill="none"
-                stroke="#9fd7ff"
-                stroke-width="2"
-                stroke-dasharray="6 6" />
-            </svg>
-
-          </div>
-        </div>
       </section>
 
 
 
       <div className='book-doctor'>
+         <AnimatedContent   direction="horizontal" reverse distance={300}
+                duration={2}
+                ease="power4.out">
+
         <div className='booking-content'>
 
         <span>Get in Touch</span>
@@ -371,8 +248,14 @@ let Home = () => {
 
         <button onClick={login} >Get Appointment</button>
         </div>
+                </AnimatedContent>
         <div className='booking-img'>
+          <AnimatedContent   direction="horizontal" distance={300}
+                duration={2}
+                ease="power4.out">
+
           <img src={bookingimg} alt="" />
+                </AnimatedContent>
         </div>
       </div>
 

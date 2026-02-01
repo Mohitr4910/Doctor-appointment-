@@ -83,7 +83,6 @@ let Navbar = () => {
           <li><Link to="/">HOME</Link></li>
           <li><Link to="/about">ABOUT</Link></li>
           <li><Link to="/doctors">DOCTORS</Link></li>
-          <li><Link to="/departments">DEPARTMENTS</Link></li>
           <li><Link to="/mybooking">My Bookings</Link></li>
         </ul>
 

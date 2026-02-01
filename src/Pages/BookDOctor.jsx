@@ -1,17 +1,10 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import "./Booking.css"
-import formimg from "../assets/appoinment_page_img.png"
-import axios from 'axios'
-import { Navigate } from 'react-router-dom'
-import AnimatedContent from '../Components/animatedcontant'
-import bgvideo from '../assets/267871.mp4'
 import { useNavigate } from 'react-router-dom'
+import AnimatedContent from '../Components/animatedcontant'
 
-
-
-function Booking() {
-  let navigate=useNavigate()
+function BookDOctor() {
+    let navigate=useNavigate()
 
 
   let [form, setform] = useState({
@@ -153,35 +146,16 @@ function Booking() {
     }
 
   }
-
-    //   let login=()=>{
-    //    let login=localStorage.getItem("email")
-  
-    //   if(!login){
-    //     alert("Please Login First")
-    //     navigate("login")
-         
-    //   }
-    //   else{
-    //       navigate("booking")
-    //   }
-    // }
-
   return (
-
-
     <>
-      <div className='main'>
-          <video autoPlay muted loop playsinline class="bg-video">
-               <source src={bgvideo} type="video/mp4" />
-          </video>
+    
 
         <div className='content'>
        
 
           <div className='form-img'>
           <AnimatedContent distance={400} duration={2} ease="power4.out">
-            <img src={formimg} alt="" />
+            {/* <img src={formimg} alt="" /> */}
           </AnimatedContent>
           </div>
 
@@ -267,12 +241,11 @@ function Booking() {
 
 
 
-      </div>
+      
 
 
     </>
-
   )
 }
 
-export default Booking
+export default BookDOctor
