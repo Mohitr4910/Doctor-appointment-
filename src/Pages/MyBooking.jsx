@@ -49,9 +49,6 @@ let MyBooking = () => {
 
     <>
 
-
-   
-
      {Data.length > 0? (  <div className="booking-page">
         {
           Data.map((e) => (

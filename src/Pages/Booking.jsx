@@ -300,14 +300,14 @@ function Booking() {
     <>  
     {doctor ? ( 
       <div className='main'>
-          <video autoPlay muted loop playsinline class="bg-video">
+          <video muted class="bg-video">
                <source src={bgvideo} type="video/mp4" />
           </video>
 
         <div className='content'>
        
 
-          <div className='form-img'>
+          <div className='doctor-form-img'>
           <AnimatedContent distance={400} duration={2} ease="power4.out">
             <img src={doctor.image} alt="" />
           </AnimatedContent>
@@ -395,7 +395,7 @@ function Booking() {
       </div>):(
 
       <div className='main'>
-          <video autoPlay muted loop playsinline class="bg-video">
+          <video muted class="bg-video">
                <source src={bgvideo} type="video/mp4" />
           </video>
 
