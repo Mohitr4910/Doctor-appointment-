@@ -662,6 +662,7 @@ color:lightgreen;
   border: none;
   border-radius: 20px;
   padding: 10px;
+  cursor: pointer;
   margin-left: 50px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

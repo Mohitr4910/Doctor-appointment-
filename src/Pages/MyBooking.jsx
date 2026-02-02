@@ -10,22 +10,10 @@ let MyBooking = () => {
 
   let [open, setOpen] = useState(null);
   let [Data, setdata] = useState([])
-  let [form, setform] = useState({
-    
-              name: '',
-              num: '',
-              email: '',
-              gender: '',
-              age: '',
-              speciality: '',
-              date: '',
-              time: '',
-              symptoms: ''
-
-  })
+  
 
   let FatchData = () => {
-    let api = "http://localhost:3000/users"
+    let api = "http://localhost:3000/patient"
 
     axios.get(api).then((res) => {
       let data = res.data
@@ -40,8 +28,7 @@ let MyBooking = () => {
     }).catch((err) => {
 
     })
-    console.log(Data)
-    console.log(localStorage.getItem("email"));
+  
   }
 
   useEffect(() => {
@@ -49,11 +36,23 @@ let MyBooking = () => {
   }, [])
 
 
+  let Delete=(id)=>{
+    let api=`http://localhost:3000/patient/${id}`
+    axios.delete(api).then((res)=>{
+      FatchData()
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }
+
   return (
 
     <>
 
-      <div className="booking-page">
+
+   
+
+     {Data.length > 0? (  <div className="booking-page">
         {
           Data.map((e) => (
             <div className="booking-card">
@@ -70,6 +69,11 @@ let MyBooking = () => {
                 <div className="dropdown-content">
 
                   <div className="booking-grid">
+                    <div className="info-box">
+                      <label>Doctor Name</label>
+                      <p>{e.doctorname}</p>
+                    </div>
+
                     <div className="info-box">
                       <label>Mobile</label>
                       <p>{e.num}</p>
@@ -112,17 +116,19 @@ let MyBooking = () => {
                   </div>
 
                   <div className="booking-footer">
-                    <button className="cancel-btn">Cancel</button>
+                    <button onClick={()=>{Delete(e.id)}} className="cancel-btn">Cancel</button>
                     <button className="reschedule-btn">Reschedule</button>
                   </div>
-
+                  
                 </div>
               )}
 
             </div>
           ))
         }
-      </div>
+      </div>):(
+        <h1 style={{textAlign:"center",marginTop:"80px", fontSize:"30px", fontWeight:"bold", color:"green"}}>No Appointments Booked</h1>
+      )}
 
 
 

@@ -32,7 +32,7 @@ function Doctors() {
     },
       {
       "name":"Dr.Rohan",
-      "speciality":"Ophthalmology",
+      "speciality":"Dentist",
       "degree":"MBBS, FCPS, FRCS",
       "image": doctor3
 

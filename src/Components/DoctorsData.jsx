@@ -25,8 +25,8 @@ function DoctorsData({ data }) {
                 duration={1+i*1}
                 ease="power4.out">
 
-              <Link to="/BookDOctor" >
-              <div className="doctor-card" key={i} >
+              <Link to="/booking" key={i} state={{DoctorData:e}}  >
+              <div className="doctor-card">
                 <img src={e.image} alt="" />
                 <div className="card-info">
                   <h3>{e.name}</h3>

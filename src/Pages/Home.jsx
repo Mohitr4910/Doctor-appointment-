@@ -246,7 +246,8 @@ let Home = () => {
         <h1>Best Medical & Health Care Near Your City</h1>
         <p>We believe everyone deserves access to quality healthcare. Our dedicated medical team is committed to providing safe, reliable, and affordable treatment for patients of all ages in your city.</p>
 
-        <button onClick={login} >Get Appointment</button>
+        <button onClick={login}>Get Appointment</button>
+
         </div>
                 </AnimatedContent>
         <div className='booking-img'>

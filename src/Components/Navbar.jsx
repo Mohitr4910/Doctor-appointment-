@@ -11,13 +11,11 @@ import logo from "../assets/apothecary-159037_1920.png"
 
 let Navbar = () => {
   let navigate=useNavigate()
-  
-  
-  
-  const [Login, setLogin] = useState(false);
-  
-  useEffect(() => {
-    const user = localStorage.getItem("email");
+    
+    let [Login, setLogin] = useState(false);
+    
+    useEffect(() => {
+    let user = localStorage.getItem("email");
     //  console.log(user);
     if (user) {
       setLogin(true);
@@ -28,7 +26,7 @@ let Navbar = () => {
   }, []);
   
   let logout = () => {
-    const Confirm =window.confirm("Are you sure you want to logout?")
+    let Confirm =window.confirm("Are you sure you want to logout?")
     if(Confirm){
       
       localStorage.removeItem("email");
@@ -39,7 +37,6 @@ let Navbar = () => {
       return
     }
   };
-  
   
   
     let login=()=>{
@@ -56,13 +53,20 @@ let Navbar = () => {
     }
 
 
+    let users = JSON.parse(localStorage.getItem('users')) || []
+    let user=localStorage.getItem("email")
+
+    let existuser = users.find((e) => {
+      return e.email == user
+    })
+
   return (
     <>
       {/* Top Info Bar */}
       <div className="top-bar">
         <div className="top-left">
-          <span>📞 +91 9302770758</span>
-          <span>✉ mohitrahangdale67890@gmail.com</span>
+          <span>📞 +91 9302700758</span>
+          <span>✉ mohit@gmail.com</span>
         </div>
 
         <div className="top-right">
@@ -91,7 +95,7 @@ let Navbar = () => {
           
           {Login ? (<div>
           {/* <img src="" alt="" /> */}
-          <li className='profile'>Profile</li>
+          <li className='profile'>{existuser.name}</li>
           </div>):("")}
           <li className="signup"><Link to="/signup">SignUP</Link></li>
 
