@@ -13,7 +13,7 @@ import doctor1 from "../assets/pexels-cristian-rojas-8460157.jpg"
 import doctor2 from "../assets/pexels-pavel-danilyuk-5998474.jpg"
 import doctor3 from "../assets/pexels-kooldark-14628069.jpg"
 import doctor4 from "../assets/pexels-kooldark-27666710.jpg"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { useEffect } from 'react'
@@ -63,6 +63,7 @@ let Home = () => {
   }, []);
 
 
+  let navigate=useNavigate()
     let login=()=>{
        let login=localStorage.getItem("email")
   
