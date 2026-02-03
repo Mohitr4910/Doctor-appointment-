@@ -20,6 +20,8 @@ function DoctorsData({ data }) {
 
             {data.map((e,i)=>(
 
+
+
                 
                 <AnimatedContent distance={300}
                 duration={1+i*1}
