@@ -2,10 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 import "./Booking.css"
 import formimg from "../assets/appoinment_page_img.png"
+import bgvideo from '../assets/267871.mp4'
 import axios from 'axios'
 import { Navigate, useLocation } from 'react-router-dom'
 import AnimatedContent from '../Components/animatedcontant'
-import bgvideo from '../assets/267871.mp4'
 import { useNavigate } from 'react-router-dom'
 
 
