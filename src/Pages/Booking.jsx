@@ -143,8 +143,8 @@ function Booking() {
       let login=localStorage.getItem("email")
 
       if(login){
-      // let api = "http://localhost:3000/patient"
-      let api = "http://127.0.0.1:8000/patient_list/"
+      let api = "http://localhost:3000/patient"
+      // let api = "http://127.0.0.1:8000/patient_list/"
 
       let loggedemail = localStorage.getItem("email")
     
@@ -260,9 +260,9 @@ function Booking() {
       let login=localStorage.getItem("email")
 
       if(login){
-      // let api = "http://localhost:3000/patient"
+      let api = "http://localhost:3000/patient"
       
-      let api = "http://127.0.0.1:8000/patient_list/"
+      // let api = "http://127.0.0.1:8000/patient_list/"
 
       let loggedemail = localStorage.getItem("email")
     

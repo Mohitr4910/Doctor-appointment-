@@ -29,8 +29,8 @@ let MyBooking = () => {
 
 
   let FatchData = () => {
-    // let api = "http://localhost:3000/patient"
-    let api = "http://127.0.0.1:8000/patient_list/"
+    let api = "http://localhost:3000/patient"
+    // let api = "http://127.0.0.1:8000/patient_list/"
 
     axios.get(api).then((res) => {
       let data = res.data
@@ -54,8 +54,8 @@ let MyBooking = () => {
 
 
   let Delete=(id)=>{
-    // let api=`http://localhost:3000/patient/${id}`
-    let api=`http://127.0.0.1:8000/patient_detail/${id}/`
+    let api=`http://localhost:3000/patient/${id}`
+    // let api=`http://127.0.0.1:8000/patient_detail/${id}/`
     axios.delete(api).then((res)=>{
       FatchData()
     }).catch((err)=>{
@@ -70,8 +70,8 @@ let MyBooking = () => {
   let handleSubmit=(e)=>{
     e.preventDefault()
     let loggedemail=localStorage.getItem("email")
-    // let api=`http://localhost:3000/patient/${editid}`
-    let api=`http://127.0.0.1:8000/patient_detail/${editid}/`
+    let api=`http://localhost:3000/patient/${editid}`
+    // let api=`http://127.0.0.1:8000/patient_detail/${editid}/`
     axios.put(api,{...form,loggedemail:loggedemail}).then((res)=>{
       FatchData()
       seteditid(null)
