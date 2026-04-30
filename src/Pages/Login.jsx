@@ -9,6 +9,7 @@ import v5 from '../assets/Video Project 2 1.mp4'
 import { motion } from "framer-motion";
 import AnimatedContent from '../Components/animatedcontant'
 import { useEffect } from "react";
+import axios from 'axios'
 
 
 
@@ -23,6 +24,8 @@ let Login = () => {
     pass: ''
   })
 
+  console.log(form)
+
   let manageform = (e) => {
 
     setform({ ...form, [e.target.name]: e.target.value })
@@ -35,7 +38,7 @@ let Login = () => {
 
 
 
-  let Submit = (e) => {
+  let Submit = async (e) => {
 
     e.preventDefault()
     
@@ -72,31 +75,40 @@ let Login = () => {
 
       setepass('Enter Strong password use( 0-9,a-z,!@#$&* )')
     }
+    
+    let adminEmail = "mohitrahangdale67890@gmail.com"
+    let adminPass = "mohit@123"
 
-    let users = JSON.parse(localStorage.getItem('users')) || []
 
-    let existuser = users.find((e) => {
-      return e.email == form.email
-    })
+      if (!valid) return
 
-    if (!existuser) {
-      alert('Please register first')
+  if (email === adminEmail && pass === adminPass) {
+    alert("Admin Login Successful")
+    localStorage.setItem("role", "admin")
+    navigate("/adminpanal")
+    return
+  }
+      let res = await axios.get(`http://127.0.0.1:8000/user_list/?email=${email}`)
+    
 
-      navigate("/signup")
+      
+      if (res.data.length === 0) {
+        alert("User not found, please signup")
+        navigate("/signup")
+        return
+      }
 
-    }
+      let user = res.data[0]
 
-    if (pass != existuser.pass) {
-      alert("password invalid")
+       if (user.pas !== pass) {
+      alert("Invalid password")
       return
     }
 
     alert("Login successful")
-      localStorage.setItem("email", form.email)
-      localStorage.setItem("password",form.pass)
-    navigate("/home")
+    localStorage.setItem("user", user.email)
+    navigate("/")
   }
-
 
   const [showForm, setShowForm] = useState(false);
 

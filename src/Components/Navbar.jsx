@@ -15,7 +15,7 @@ let Navbar = () => {
     let [Login, setLogin] = useState(false);
     
     useEffect(() => {
-    let user = localStorage.getItem("email");
+    let user = localStorage.getItem("user");
     //  console.log(user);
     if (user) {
       setLogin(true);
@@ -29,8 +29,7 @@ let Navbar = () => {
     let Confirm =window.confirm("Are you sure you want to logout?")
     if(Confirm){
       
-      localStorage.removeItem("email");
-      localStorage.removeItem("password");
+      localStorage.removeItem("user");
       setLogin(false);
     }
     else{
@@ -40,7 +39,7 @@ let Navbar = () => {
   
   
     let login=()=>{
-       let login=localStorage.getItem("email")
+       let login=localStorage.getItem("user")
   
       if(!login){
         alert("Please Login First")
@@ -54,7 +53,7 @@ let Navbar = () => {
 
 
     let users = JSON.parse(localStorage.getItem('users')) || []
-    let user=localStorage.getItem("email")
+    let user=localStorage.getItem("user")
 
     let existuser = users.find((e) => {
       return e.email == user
@@ -95,7 +94,7 @@ let Navbar = () => {
           
           {Login ? (<div>
           {/* <img src="" alt="" /> */}
-          <li className='profile'>{existuser.name}</li>
+          <li className='profile'></li>
           </div>):("")}
           <li className="signup"><Link to="/signup">SignUP</Link></li>
 

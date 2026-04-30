@@ -140,17 +140,18 @@ function Booking() {
 
     if (valid) {
 
-      let login=localStorage.getItem("email")
+      let login=localStorage.getItem("user")
 
       if(login){
-      let api = "http://localhost:3000/patient"
-      // let api = "http://127.0.0.1:8000/patient_list/"
+      // let api = "http://localhost:3000/patient"
+      let api = "http://127.0.0.1:8000/patient_list/"
 
-      let loggedemail = localStorage.getItem("email")
+      let loggedemail = localStorage.getItem("user")
     
-      axios.post(api, { ...form, loggedemail: localStorage.getItem("email") }).then(
+      axios.post(api, { ...form, loggedemail: localStorage.getItem("user") }).then(
         () => {
           alert("Booking confirm")
+          navigate("/mybooking")
 
         }
       
@@ -257,16 +258,17 @@ function Booking() {
 
     if (valid) {
 
-      let login=localStorage.getItem("email")
+      let login=localStorage.getItem("user")
 
       if(login){
-      let api = "http://localhost:3000/patient"
+      // let api = "http://localhost:3000/patient"
       
-      // let api = "http://127.0.0.1:8000/patient_list/"
+      let api = "http://127.0.0.1:8000/patient_list/"
 
-      let loggedemail = localStorage.getItem("email")
+      let loggedemail = localStorage.getItem("user")
+      console.log(loggedemail)
     
-      axios.post(api, { ...form, loggedemail: localStorage.getItem("email") }).then(
+      axios.post(api, { ...form, loggedemail: localStorage.getItem("user") }).then(
         () => {
           alert("Booking confirm")
 

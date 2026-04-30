@@ -8,6 +8,7 @@ import Tilt from "react-parallax-tilt";
 
 import v2 from '../assets/Untitled design (8).mp4'
 import AnimatedContent from '../Components/animatedcontant'
+import axios from 'axios'
 
 
 
@@ -20,11 +21,10 @@ let Signup = () => {
         name: '',
         email: '',
         contact: '',
-        pass: '',
+        pas: '',
         cpass: '',
     })
 
-    console.log(form.name);
     
 
 
@@ -40,7 +40,7 @@ let Signup = () => {
     let [errcpass, seterrcpass] = useState('')
 
 
-    let Submit = (e) => {
+    let Submit =  async (e) => {
 
 
 
@@ -49,7 +49,7 @@ let Signup = () => {
         let name = form.name.trim()
         let contact = form.contact.trim()
         let email = form.email.trim()
-        let pass = form.pass.trim()
+        let pas = form.pas.trim()
         let cpass = form.cpass.trim()
 
         let valid = true
@@ -96,13 +96,13 @@ let Signup = () => {
 
 
         }
-        else if (pass == "") {
+        else if (pas == "") {
             e.preventDefault()
             valid = false
 
             seterrpass('Password required')
         }
-        else if (!(pass.match(/[!@#$&*]/) && pass.match(/[a-z]/) && pass.match(/[1234567890]/))) {
+        else if (!(pas.match(/[!@#$&*]/) && pas.match(/[a-z]/) && pas.match(/[1234567890]/))) {
             e.preventDefault()
             valid = false
 
@@ -114,7 +114,7 @@ let Signup = () => {
 
             seterrcpass('Confirm password required')
         }
-        else if (!(pass == cpass)) {
+        else if (!(pas == cpass)) {
             e.preventDefault()
             valid = false
 
@@ -123,18 +123,22 @@ let Signup = () => {
 
         if (valid) {
 
-            let users = JSON.parse(localStorage.getItem('users')) || []
 
-            let existuser = users.find((e) => {
-                return e.email == form.email
-            })
+    let res = await axios.get(`http://127.0.0.1:8000/user_list/?email=${email}`)
 
-            if (existuser) {
-                alert("already registered")
-                return
-            }
-            users.push(form)
-            localStorage.setItem('users', JSON.stringify(users))
+    console.log(res.data)
+
+    if(res.data.length>0){
+        alert("Already Registered")
+        return
+    }
+    
+    //  if (Array.isArray(res.data) && res.data.length > 0) {
+    //         alert("Already Registered")
+    //         return
+    //     }
+
+            await axios.post("http://127.0.0.1:8000/user_list/", form)
             alert("signup successful")
             navigate('/login')
         }
@@ -243,8 +247,8 @@ let Signup = () => {
                         <label className="block font-thin text-[20px] text-black-200 mb-1">Password</label>
                         <input
                             type="password"
-                            name="pass"
-                            value={form.pass}
+                            name="pas"
+                            value={form.pas}
                             onChange={manageform}
                             className="w-[90%] h-[40px] text-[22px] bg-transparent border-b-3 border-white/50 px-1 focus:border-b-2 focus:border-white/50 focus:outline-none focus:ring-0"
                             

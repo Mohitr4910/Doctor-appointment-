@@ -1,0 +1,369 @@
+/* 🌐 Base */
+.admin-container {
+  padding: 30px;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+}
+
+/* 🧾 Title */
+.admin-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* 🔘 Tabs */
+.admin-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.admin-tabs button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 25px;
+  background: #e0e0e0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.admin-tabs button:hover {
+  background: #28a745;
+  color: white;
+  transform: scale(1.05);
+}
+
+.admin-tabs .active {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* 📋 Form Container */
+.admin-form {
+  width: 340px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  animation: fadeIn 0.5s ease;
+}
+
+/* 📦 Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* ✏️ Inputs */
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40,167,69,0.3);
+  outline: none;
+}
+
+/* 🚀 Button */
+.submit-btn,
+.admin-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admin-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* 🧑‍⚕️ Doctor List */
+.doctor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+/* 🪪 Card */
+.doctor-card {
+  width: 230px;
+  padding: 15px;
+  border-radius: 15px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  
+  height: fit-content;
+}
+
+.doctor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* 🖼 Image */
+.doctor-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* 🧾 Text */
+.doctor-card h3 {
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.doctor-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ❌ Delete Button */
+.delete-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ff4d4d, #ff0000);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ✨ Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.doctor-card button {
+  margin: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.doctor-card button:first-child {
+  background: orange;
+  color: white;
+}
+
+/* ✏️ Edit Button */
+.edit-btn {
+  margin-top: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.edit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* Click effect */
+.edit-btn:active {
+  transform: scale(0.95);
+}
+
+
+/* 🔝 Navbar */
+.admin-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Right side */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Profile */
+.profile {
+  background: rgba(255,255,255,0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* Logout button */
+.logout-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: red;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: darkred;
+  transform: scale(1.05);
+}
+
+.admin-layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #28a745, #20c997);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: white;
+}
+
+.sidebar button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar .active {
+  background: white;
+  color: #28a745;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+}
+
+/* 📦 Appointment List */
+.appointment-list {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* 🪪 Card */
+.appointment-card {
+  height: fit-content;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-left: 5px solid #28a745;
+  transition: 0.3s;
+}
+
+/* Hover */
+.appointment-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* 👤 Name */
+.app-name {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* 📄 Text */
+.appointment-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 4px 0;
+}
+
+/* Label bold */
+.appointment-card span {
+  font-weight: 600;
+  color: #222;
+}
+
+/* 📅 Date Time */
+.app-datetime {
+  margin: 8px 0;
+  padding: 6px;
+  background: #f1fdf5;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #28a745;
+}
+
+.appointment-list button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ff4d4d, #ff0000);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+} 

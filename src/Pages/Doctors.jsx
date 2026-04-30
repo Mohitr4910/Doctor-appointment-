@@ -12,41 +12,28 @@ import doctor2 from "../assets/pexels-pavel-danilyuk-5998474.jpg"
 import doctor3 from "../assets/pexels-kooldark-14628069.jpg"
 import doctor4 from "../assets/pexels-kooldark-27666710.jpg"
 
-function Doctors() {
+let Doctors = () => {
+ const [data, setdata] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
- let Data = [
-      {
-      "name":"Dr.Abhishek",
-      "speciality":"Neurology",
-      "degree":"MBBS, FCPS, FRCS",
-      "image": doctor1
+  useEffect(() => {
+    const fetchDoctors = async () => {
+      try {
+        const res = await axios.get("http://127.0.0.1:8000/doctor_list/");
+        const data = res?.data?.data || res?.data || [];
+        setdata(Array.isArray(data) ? data : []);
+      } catch (err) {
+        setError("Failed to load doctors");
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    },
-      {
-      "name":"Dr.Khushi",
-      "speciality":"Cardiology",
-      "degree":"MBBS, FCPS, FRCS",
-      "image": doctor2
+    fetchDoctors();
+  }, []);
 
-
-    },
-      {
-      "name":"Dr.Rohan",
-      "speciality":"Dentist",
-      "degree":"MBBS, FCPS, FRCS",
-      "image": doctor3
-
-
-    },
-      {
-      "name":"Dr.Neeraj",
-      "speciality":"Pediatric",
-      "degree":"MBBS, FCPS, FRCS",
-      "image": doctor4
-
-
-    }
-  ]
 
 
 
@@ -54,7 +41,7 @@ function Doctors() {
     <>
 
 
-      <DoctorData data={Data} />
+      <DoctorData data={data} />
 
 
     </>

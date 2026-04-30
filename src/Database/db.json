@@ -13,6 +13,54 @@
       "doctorname": "Dr.Abhishek",
       "loggedemail": "mohitrahangdale67890@gmail.com",
       "id": "444a"
+    },
+    {
+      "id": "d3dd",
+      "name": "Roushan",
+      "num": "9302770520",
+      "email": "mohitrahangdale67890@gmail.com",
+      "gender": "Male",
+      "age": "20",
+      "speciality": "Cardiology",
+      "date": "2026-03-27",
+      "time": "10:00AM-11:00AM",
+      "symptoms": "vgfy",
+      "loggedemail": "mohitrahangdale67890@gmail.com"
+    },
+    {
+      "id": "f417",
+      "doctorname": "Dr.Abhishek",
+      "name": "gggggg",
+      "num": "9302770759",
+      "email": "67890@gmail.com",
+      "gender": "Male",
+      "speciality": "Neurology",
+      "age": "18",
+      "date": "2026-02-28",
+      "time": "10:00AM-11:00AM",
+      "symptoms": "sert",
+      "loggedemail": "mohitrahangdale67890@gmail.com"
     }
-  ]
+  ],
+  "users": [
+    {
+      "name": "Diksha Pal",
+      "email": "diksha@gmail.com",
+      "contact": "1234567890",
+      "pass": "mohit@2002",
+      "cpass": "mohit@2002",
+      "id": "r4GinuGSwWo"
+    }
+  ],
+  "doctors": [
+    {
+      "name": "Yamini Patle",
+      "speciality": "Cardiology",
+      "degree": "MBBS",
+      "image": "https://res.cloudinary.com/drrqhqv5u/image/upload/v1777486481/mohamad-azaam-1O8CJy1A7Wo-unsplash_fb2xkp.jpg",
+      "email": "yamini@gmail.com",
+      "id": "ZRfUUBAkXe4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
